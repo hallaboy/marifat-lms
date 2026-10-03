@@ -1,13 +1,14 @@
-# LMS Frontend
+# Ma’rifat LMS
 
-O‘quvchi, o‘qituvchi va administrator kabinetlari uchun Next.js frontend.
+O‘zbek tilidagi zamonaviy LMS platformasining interaktiv frontend MVPsi. Dashboard kurslar, topshiriqlar, o‘qish faolligi, natijalar va bildirishnomalarni birlashtiradi.
 
 ## Texnologiyalar
 
 - Next.js 16 va React 19
-- TypeScript
-- Tailwind CSS
-- Cloudflare orqali HTTPS, CDN va himoya
+- TypeScript va Tailwind CSS
+- FastAPI va PostgreSQL backend
+- Firebase bildirishnomalari
+- Cloudflare orqali HTTPS, CDN va WAF
 
 ## Ishga tushirish
 
@@ -19,8 +20,10 @@ npm run dev
 
 Brauzerda `http://localhost:3000` manzilini oching. Lokal backendning standart manzili `http://127.0.0.1:8000`.
 
-## Repository chegarasi
+## Arxitektura chegarasi
 
-Bu repository faqat frontend kodi va xavfsiz hujjatlarni saqlaydi. Backend kodi, PostgreSQL ma’lumotlari, foydalanuvchi yuklamalari, loglar, zaxira nusxalari va barcha sirlar `D:\LMS-Server` hududida saqlanadi va GitHub'ga yuborilmaydi.
+Bu repository faqat frontend kodi va xavfsiz hujjatlarni saqlaydi. Backend kodi, PostgreSQL ma’lumotlari, foydalanuvchi yuklamalari, loglar, zaxira nusxalari va barcha sirlar `D:\LMS-Server` hududida saqlanadi va GitHub’ga yuborilmaydi.
+
+Production frontend statik GitHub Pages emas, qat’iy nonce asosidagi CSP’ni qo‘llaydigan Next.js runtime orqali chiqariladi. Tashqi trafik Cloudflare HTTPS/WAF orqali keladi, backend va PostgreSQL esa internetga bevosita ochilmaydi.
 
 Xavfsizlik talablari [SECURITY.md](./SECURITY.md) faylida yozilgan.
