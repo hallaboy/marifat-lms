@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
   ArrowRight,
@@ -43,11 +44,11 @@ const courses: Course[] = [
 ];
 
 const navItems = [
-  { label: "Bosh sahifa", icon: House },
-  { label: "Kurslarim", icon: BookOpen },
-  { label: "Topshiriqlar", icon: Exam, badge: 3 },
-  { label: "Taqvim", icon: CalendarBlank },
-  { label: "Natijalar", icon: ChartBar },
+  { label: "Bosh sahifa", icon: House, href: "/" },
+  { label: "Kurslarim", icon: BookOpen, href: "/courses" },
+  { label: "Topshiriqlar", icon: Exam, badge: 3, href: "/assignments" },
+  { label: "Taqvim", icon: CalendarBlank, href: "/calendar" },
+  { label: "Natijalar", icon: ChartBar, href: "/results" },
 ];
 
 const tasks = [
@@ -57,27 +58,14 @@ const tasks = [
 ];
 
 export default function Dashboard() {
-  const [activeNav, setActiveNav] = useState("Bosh sahifa");
   const [query, setQuery] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const [noticeOpen, setNoticeOpen] = useState(false);
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
-  const [toast, setToast] = useState("");
 
   const filteredCourses = useMemo(() => courses.filter((course) =>
     `${course.title} ${course.mentor} ${course.category}`.toLowerCase().includes(query.toLowerCase())
   ), [query]);
-
-  const notify = (message: string) => {
-    setToast(message);
-    window.setTimeout(() => setToast(""), 2600);
-  };
-
-  const navigate = (label: string) => {
-    setActiveNav(label);
-    setMenuOpen(false);
-    if (label !== "Bosh sahifa") notify(`${label} bo‘limi demo rejimida ochildi`);
-  };
 
   return (
     <main className="appShell">
@@ -86,26 +74,26 @@ export default function Dashboard() {
         <button className="closeMenu" onClick={() => setMenuOpen(false)} aria-label="Menyuni yopish"><X /></button>
         <nav className="mainNav" aria-label="Asosiy menyu">
           <p className="navLabel">MENYU</p>
-          {navItems.map(({ label, icon: Icon, badge }) => (
-            <button key={label} className={activeNav === label ? "navItem active" : "navItem"} onClick={() => navigate(label)}>
-              <Icon size={21} weight={activeNav === label ? "fill" : "regular"} /><span>{label}</span>{badge && <b>{badge}</b>}
-            </button>
+          {navItems.map(({ label, icon: Icon, badge, href }) => (
+            <Link key={label} className={href === "/" ? "navItem active" : "navItem"} href={href} onClick={() => setMenuOpen(false)}>
+              <Icon size={21} weight={href === "/" ? "fill" : "regular"} /><span>{label}</span>{badge && <b>{badge}</b>}
+            </Link>
           ))}
           <p className="navLabel second">BOSHQALAR</p>
-          <button className="navItem" onClick={() => navigate("To‘lovlar")}><CreditCard size={21} /><span>To‘lovlar</span></button>
-          <button className="navItem" onClick={() => navigate("Yordam markazi")}><Question size={21} /><span>Yordam markazi</span></button>
+          <Link className="navItem" href="/payments"><CreditCard size={21} /><span>To‘lovlar</span></Link>
+          <Link className="navItem" href="/help"><Question size={21} /><span>Yordam markazi</span></Link>
         </nav>
         <div className="upgradeCard">
           <span className="spark"><Sparkle weight="fill" /></span>
           <h3>Bilimingizni oshiring!</h3>
           <p>Yangi kurslarni kashf eting va imkoniyatlaringizni kengaytiring.</p>
-          <button onClick={() => notify("Kurslar katalogi tez orada ochiladi")}>Kurslarni ko‘rish <ArrowRight /></button>
+          <Link href="/courses">Kurslarni ko‘rish <ArrowRight /></Link>
         </div>
-        <div className="sideProfile">
+        <Link className="sideProfile" href="/login">
           <span className="avatar avatarPhoto">AM</span>
           <span><strong>Aziza Mirzayeva</strong><small>Talaba</small></span>
           <CaretDown />
-        </div>
+        </Link>
       </aside>
 
       {menuOpen && <button className="scrim" onClick={() => setMenuOpen(false)} aria-label="Menyuni yopish" />}
@@ -115,7 +103,7 @@ export default function Dashboard() {
           <button className="mobileMenu" onClick={() => setMenuOpen(true)} aria-label="Menyuni ochish"><List /></button>
           <label className="searchBox"><MagnifyingGlass /><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Kurslar, darslar yoki topshiriqlarni qidiring..." /></label>
           <button className="notification" onClick={() => setNoticeOpen((value) => !value)} aria-label="Bildirishnomalar"><Bell /><i /></button>
-          <div className="headerProfile"><span className="avatar avatarPhoto">AM</span><span><strong>Aziza Mirzayeva</strong><small>Talaba</small></span><CaretDown /></div>
+          <Link className="headerProfile" href="/login"><span className="avatar avatarPhoto">MA</span><span><strong>Tizimga kirish</strong><small>Boshqaruv paneli</small></span><CaretDown /></Link>
           {noticeOpen && (
             <div className="noticePanel">
               <div><strong>Bildirishnomalar</strong><span>2 ta yangi</span></div>
@@ -140,7 +128,7 @@ export default function Dashboard() {
 
           <div className="mainGrid">
             <section className="coursesSection">
-              <div className="sectionHead"><div><h2>Kurslarim</h2><p>O‘rganishni davom ettiring</p></div><button onClick={() => notify("Barcha kurslar sahifasi demo rejimida")}>Barchasini ko‘rish <ArrowRight /></button></div>
+              <div className="sectionHead"><div><h2>Kurslarim</h2><p>O‘rganishni davom ettiring</p></div><Link href="/courses">Barchasini ko‘rish <ArrowRight /></Link></div>
               <div className="courseGrid">
                 {filteredCourses.map((course) => (
                   <article className="courseCard" key={course.id}>
@@ -150,7 +138,7 @@ export default function Dashboard() {
                       <div className="mentor"><span className={`avatar ${course.color}`}>{course.initials}</span><small>{course.mentor}</small></div>
                       <div className="progressMeta"><span>{course.lessons}</span><strong>{course.progress}%</strong></div>
                       <div className="progress"><i style={{ width: `${course.progress}%` }} /></div>
-                      <button onClick={() => notify(`${course.next} darsi ochildi`)}><span className={`play ${course.color}`}><Play weight="fill" /></span><span><small>{course.next}</small><strong>Davom ettirish</strong></span><ArrowRight /></button>
+                      <Link href="/courses"><span className={`play ${course.color}`}><Play weight="fill" /></span><span><small>{course.next}</small><strong>Davom ettirish</strong></span><ArrowRight /></Link>
                     </div>
                   </article>
                 ))}
@@ -187,9 +175,8 @@ export default function Dashboard() {
       </section>
 
       <nav className="mobileNav">
-        {navItems.slice(0, 5).map(({ label, icon: Icon }) => <button key={label} className={activeNav === label ? "active" : ""} onClick={() => navigate(label)}><Icon weight={activeNav === label ? "fill" : "regular"} /><small>{label.split(" ")[0]}</small></button>)}
+        {navItems.slice(0, 5).map(({ label, icon: Icon, href }) => <Link key={label} className={href === "/" ? "active" : ""} href={href}><Icon weight={href === "/" ? "fill" : "regular"} /><small>{label.split(" ")[0]}</small></Link>)}
       </nav>
-      {toast && <div className="toast"><Check weight="bold" />{toast}</div>}
     </main>
   );
 }

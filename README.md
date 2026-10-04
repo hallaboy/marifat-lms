@@ -1,6 +1,6 @@
 # Ma’rifat LMS
 
-O‘zbek tilidagi zamonaviy LMS platformasining interaktiv frontend MVPsi. Dashboard kurslar, topshiriqlar, o‘qish faolligi, natijalar va bildirishnomalarni birlashtiradi.
+O‘zbek tilidagi zamonaviy LMS platformasi. Hozirgi bosqichda haqiqiy FastAPI autentifikatsiyasi, rolga asoslangan ruxsatlar, Super Admin paneli va foydalanuvchilar boshqaruvi ishlaydi.
 
 ## Texnologiyalar
 
@@ -19,6 +19,22 @@ npm run dev
 ```
 
 Brauzerda `http://localhost:3000` manzilini oching. Lokal backendning standart manzili `http://127.0.0.1:8000`.
+
+## Lokal boshqaruv paneli
+
+Butun lokal platformani ishga tushirish:
+
+```powershell
+& "D:\LMS-Server\config\start-lms.ps1"
+```
+
+- Platforma: `http://127.0.0.1:3000`
+- Login: `http://127.0.0.1:3000/login`
+- Admin panel: `http://127.0.0.1:3000/admin`
+- Dastlabki Super Admin: `admin@marifat.uz`
+- Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
+
+GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js runtime hamda FastAPI serverini talab qiladi.
 
 ## Arxitektura chegarasi
 

@@ -8,9 +8,12 @@
 
 ## Autentifikatsiya
 
-- Sessiya tokenlari JavaScript orqali o‘qilmaydigan `HttpOnly`, `Secure`, `SameSite` cookie'da saqlanadi.
+- Sessiya tokenlari JavaScript orqali o‘qilmaydigan `HttpOnly`, `SameSite` cookie'da saqlanadi; production HTTPS muhitida `Secure` majburiy yoqiladi.
 - Parollar faqat backendda Argon2id yordamida xeshlanadi.
 - Rollar va ruxsatlar backend tomonidan har bir so‘rovda tekshiriladi.
+- Holatni o‘zgartiruvchi so‘rovlar CSRF token va ruxsat etilgan `Origin` bilan tekshiriladi.
+- Besh marta noto‘g‘ri parol kiritilganda hisob vaqtincha bloklanadi.
+- Login, logout va administrator amallari audit jurnaliga yoziladi.
 
 ## Tarmoq
 
