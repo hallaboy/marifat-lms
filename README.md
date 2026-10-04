@@ -76,6 +76,9 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 
 ## Onlayn test va imtihonlar
 
+- Yangi kurs yaratishda “Kurs bilan birga quiz yaratish” bosqichini yoqish mumkin.
+- Kurs muharririning o‘zida quiz nomi, o‘tish bali, urinishlar soni va vaqt chegarasi sozlanadi.
+- Yaratilgan quizdan savollar muharririga to‘g‘ridan-to‘g‘ri o‘tiladi.
 - Administrator kurs uchun test yoki imtihon yaratadi, savollar va 2–6 ta javob variantini kiritadi.
 - Har bir savolda aynan bitta to‘g‘ri javob serverda saqlanadi va talaba API’siga yuborilmaydi.
 - O‘tish bali, vaqt chegarasi va ruxsat etilgan urinishlar soni sozlanadi.

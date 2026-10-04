@@ -32,8 +32,14 @@ export default function AdminAssessmentsPage() {
           apiFetch("/api/v1/admin/assessments"), apiFetch("/api/v1/admin/courses"),
         ]);
         if (!assessmentResponse.ok || !courseResponse.ok) throw new Error("Test ma’lumotlarini yuklab bo‘lmadi");
-        setAssessments((await assessmentResponse.json()) as Assessment[]);
+        const assessmentList = (await assessmentResponse.json()) as Assessment[];
+        setAssessments(assessmentList);
         setCourses((await courseResponse.json()) as Course[]);
+        const requestedAssessmentId = new URLSearchParams(window.location.search).get("assessment");
+        if (requestedAssessmentId && assessmentList.some((item) => item.id === requestedAssessmentId)) {
+          const detailResponse = await apiFetch(`/api/v1/admin/assessments/${requestedAssessmentId}`);
+          if (detailResponse.ok) setSelected((await detailResponse.json()) as AdminAssessmentDetail);
+        }
       } catch (cause) {
         setError(cause instanceof Error ? cause.message : "Server bilan aloqa uzildi");
       }
