@@ -34,6 +34,8 @@ Butun lokal platformani ishga tushirish:
 - Kurslar katalogi: `http://127.0.0.1:3000/courses`
 - Kurslar boshqaruvi: `http://127.0.0.1:3000/admin/courses`
 - Multimedia kutubxonasi: `http://127.0.0.1:3000/admin/materials`
+- Kursga biriktirish: `http://127.0.0.1:3000/admin/enrollments`
+- Talabaning kurslari: `http://127.0.0.1:3000/my-courses`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -56,6 +58,14 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Gamifikatsiya/o‘yin va qo‘shimcha havolalar faqat HTTPS orqali qabul qilinadi.
 - Fayl nomi va brauzer yuborgan MIME qiymatiga ishonilmaydi; haqiqiy format serverda tekshiriladi.
 - Fayllar `D:\LMS-Server\uploads\course-materials` ichida tasodifiy nom bilan saqlanadi va faqat autentifikatsiyalangan API orqali uzatiladi.
+
+## Talabalarni kursga biriktirish va progress
+
+- Administrator faol talabani kursga biriktiradi va biriktirishni vaqtincha to‘xtata oladi.
+- Talaba faqat o‘ziga biriktirilgan faol yoki tugallangan kurs darslari va fayllarini ko‘ra oladi.
+- “Darsni yakunlash” amali CSRF himoyasi bilan serverda saqlanadi.
+- Progress nashr qilingan darslar soniga nisbatan avtomatik hisoblanadi; barcha darslar tugaganda kurs `completed` holatiga o‘tadi.
+- Talabaning “Mening kurslarim” kabinetida joriy foiz va kurs holati ko‘rsatiladi.
 
 ## Arxitektura chegarasi
 

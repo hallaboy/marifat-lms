@@ -23,6 +23,13 @@
 - Fayllar hajmi turiga qarab cheklanadi va SHA-256 nazorat summasi yoziladi.
 - Lokal material fayllari statik katalog sifatida ochilmaydi; yuklab olishda sessiya va kurs ruxsati tekshiriladi.
 
+## Kursga kirish nazorati
+
+- Talabaning kurs, dars va fayllarga kirishi backenddagi amaldagi enrollment yozuvi bilan tekshiriladi.
+- `suspended` holatidagi yoki kursga biriktirilmagan talaba dars mazmunini ololmaydi.
+- Progress faqat tizimga kirgan talabaning o‘z enrollment yozuviga va CSRF bilan himoyalangan so‘rov orqali yoziladi.
+- Kursga biriktirish va uning holatini o‘zgartirish faqat administrator roliga ruxsat etilgan va audit jurnaliga yoziladi.
+
 ## Tarmoq
 
 - Backend dastlab faqat `127.0.0.1` manzilida ishlaydi.

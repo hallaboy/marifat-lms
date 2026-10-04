@@ -51,6 +51,44 @@ export type Lesson = {
 
 export type CourseDetail = Course & { lessons: Lesson[] };
 
+export type EnrollmentStatus = "active" | "completed" | "suspended";
+
+export type Enrollment = {
+  id: string;
+  course_id: string;
+  course_title: string;
+  student_id: string;
+  student_name: string;
+  student_email: string;
+  status: EnrollmentStatus;
+  progress_percent: number;
+  enrolled_at: string;
+  completed_at: string | null;
+  last_activity_at: string | null;
+};
+
+export type MyCourse = {
+  enrollment_id: string;
+  status: EnrollmentStatus;
+  progress_percent: number;
+  last_activity_at: string | null;
+  course: Course;
+};
+
+export type LessonCompletion = {
+  lesson_id: string;
+  is_completed: boolean;
+  progress_percent: number;
+  course_completed: boolean;
+};
+
+export type CourseProgress = {
+  course_id: string;
+  status: EnrollmentStatus;
+  progress_percent: number;
+  completed_lesson_ids: string[];
+};
+
 export type Material = {
   id: string;
   lesson_id: string;

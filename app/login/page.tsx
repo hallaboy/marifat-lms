@@ -8,6 +8,12 @@ import { FormEvent, useEffect, useState } from "react";
 import { apiFetch, AuthUser } from "../_lib/api";
 import styles from "./styles.module.css";
 
+function homeFor(user: AuthUser) {
+  if (user.role === "super_admin" || user.role === "admin") return "/admin";
+  if (user.role === "student") return "/my-courses";
+  return "/courses";
+}
+
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -21,7 +27,7 @@ export default function LoginPage() {
       .then(async (response) => {
         if (!response.ok) return;
         const user = (await response.json()) as AuthUser;
-        router.replace(user.role === "super_admin" || user.role === "admin" ? "/admin" : "/");
+        router.replace(homeFor(user));
       })
       .catch(() => undefined);
   }, [router]);
@@ -41,9 +47,7 @@ export default function LoginPage() {
         return;
       }
       const data = (await response.json()) as { user: AuthUser };
-      router.replace(
-        data.user.role === "super_admin" || data.user.role === "admin" ? "/admin" : "/",
-      );
+      router.replace(homeFor(data.user));
     } catch {
       setError("Server bilan bog‘lanib bo‘lmadi. Lokal LMS serverini tekshiring.");
     } finally {

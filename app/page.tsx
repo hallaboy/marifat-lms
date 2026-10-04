@@ -45,7 +45,7 @@ const courses: Course[] = [
 
 const navItems = [
   { label: "Bosh sahifa", icon: House, href: "/" },
-  { label: "Kurslarim", icon: BookOpen, href: "/courses" },
+  { label: "Kurslarim", icon: BookOpen, href: "/my-courses" },
   { label: "Topshiriqlar", icon: Exam, badge: 3, href: "/assignments" },
   { label: "Taqvim", icon: CalendarBlank, href: "/calendar" },
   { label: "Natijalar", icon: ChartBar, href: "/results" },
@@ -128,7 +128,7 @@ export default function Dashboard() {
 
           <div className="mainGrid">
             <section className="coursesSection">
-              <div className="sectionHead"><div><h2>Kurslarim</h2><p>O‘rganishni davom ettiring</p></div><Link href="/courses">Barchasini ko‘rish <ArrowRight /></Link></div>
+              <div className="sectionHead"><div><h2>Kurslarim</h2><p>O‘rganishni davom ettiring</p></div><Link href="/my-courses">Barchasini ko‘rish <ArrowRight /></Link></div>
               <div className="courseGrid">
                 {filteredCourses.map((course) => (
                   <article className="courseCard" key={course.id}>
@@ -138,7 +138,7 @@ export default function Dashboard() {
                       <div className="mentor"><span className={`avatar ${course.color}`}>{course.initials}</span><small>{course.mentor}</small></div>
                       <div className="progressMeta"><span>{course.lessons}</span><strong>{course.progress}%</strong></div>
                       <div className="progress"><i style={{ width: `${course.progress}%` }} /></div>
-                      <Link href="/courses"><span className={`play ${course.color}`}><Play weight="fill" /></span><span><small>{course.next}</small><strong>Davom ettirish</strong></span><ArrowRight /></Link>
+                      <Link href="/my-courses"><span className={`play ${course.color}`}><Play weight="fill" /></span><span><small>{course.next}</small><strong>Davom ettirish</strong></span><ArrowRight /></Link>
                     </div>
                   </article>
                 ))}
