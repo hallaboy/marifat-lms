@@ -1,6 +1,6 @@
 "use client";
 
-import { BellRinging, BookOpen, Books, CalendarBlank, ChalkboardTeacher, ChartBar, ClipboardText, CreditCard, Exam, Gauge, SignOut, Student, UserPlus, Users } from "@phosphor-icons/react";
+import { BellRinging, BookOpen, Books, CalendarBlank, ChalkboardTeacher, ChartBar, ClipboardText, CreditCard, Exam, Gauge, Headset, SignOut, Student, UserPlus, Users } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -67,6 +67,7 @@ export default function AdminPage() {
           <Link href="/admin/calendar"><CalendarBlank />Taqvim</Link>
           <Link href="/admin/resources"><Books />Resurslar</Link>
           <Link href="/admin/notifications"><BellRinging />Bildirishnomalar</Link>
+          <Link href="/admin/support"><Headset />Yordam markazi</Link>
           <Link href="/admin/materials"><BookOpen />Multimedia</Link>
         </nav>
         <button onClick={logout}><SignOut />Tizimdan chiqish</button>

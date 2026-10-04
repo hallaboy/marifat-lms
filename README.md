@@ -42,6 +42,7 @@ Butun lokal platformani ishga tushirish:
 - Taqvim boshqaruvi: `http://127.0.0.1:3000/admin/calendar`
 - Resurslar boshqaruvi: `http://127.0.0.1:3000/admin/resources`
 - Bildirishnomalar boshqaruvi: `http://127.0.0.1:3000/admin/notifications`
+- Yordam markazi boshqaruvi: `http://127.0.0.1:3000/admin/support`
 - Talabaning kurslari: `http://127.0.0.1:3000/my-courses`
 - Talabaning testlari: `http://127.0.0.1:3000/assessments`
 - Talabaning uy vazifalari: `http://127.0.0.1:3000/assignments`
@@ -50,6 +51,7 @@ Butun lokal platformani ishga tushirish:
 - Talabaning taqvimi: `http://127.0.0.1:3000/calendar`
 - Elektron resurslar: `http://127.0.0.1:3000/resources`
 - Bildirishnomalar markazi: `http://127.0.0.1:3000/notifications`
+- Texnik yordam markazi: `http://127.0.0.1:3000/help`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -148,6 +150,14 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Kursga bog‘langan xabarni talaba faqat shu kursga faol biriktirilgan bo‘lsa ko‘radi.
 - Har bir foydalanuvchining o‘qilganlik holati PostgreSQL bazasida alohida saqlanadi; bitta yoki barcha xabarni o‘qildi deb belgilash mumkin.
 - Xabardagi amal tugmasi faqat platforma ichidagi xavfsiz yo‘lga yo‘naltiriladi. Ushbu modul keyingi Telegram yetkazib berish kanali uchun asos bo‘ladi.
+
+## Yordam markazi va texnik ko‘mak
+
+- Administrator kategoriyalar bo‘yicha FAQ savol-javoblarini qoralama sifatida yaratadi va alohida nashr qiladi.
+- Foydalanuvchi nashr qilingan yo‘riqnomalarni qidiradi yoki texnik yordamga yangi murojaat yuboradi.
+- Har bir murojaat ichida foydalanuvchi va yordam xizmati o‘rtasidagi yozishmalar, ustuvorlik va holat tarixi saqlanadi.
+- Administrator murojaatni `yangi`, `jarayonda`, `hal qilindi` yoki `yopildi` holatida boshqaradi.
+- Hal qilingan murojaatga foydalanuvchi yana yozsa u qayta ochiladi; yopilgan murojaatga yangi xabar qo‘shilmaydi.
 
 ## Arxitektura chegarasi
 

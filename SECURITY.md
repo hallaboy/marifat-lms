@@ -83,6 +83,14 @@
 - O‘qilganlik yozuvi foydalanuvchi identifikatoriga bog‘langan; boshqa foydalanuvchi nomidan xabar holatini o‘zgartirish mumkin emas.
 - Amal havolalari faqat `/` bilan boshlanuvchi ichki platforma yo‘llari bo‘lishi mumkin; tashqi va protokolga bog‘liq havolalar rad etiladi.
 
+## Texnik yordam xavfsizligi
+
+- Foydalanuvchi faqat o‘z identifikatoriga tegishli murojaatlar va yozishmalarni ko‘ra oladi; begona identifikator `404` qaytaradi.
+- Murojaat va javob yaratish CSRF hamda sessiya tekshiruvlari bilan, administrator javobi va holat o‘zgarishi esa qo‘shimcha rol nazorati bilan himoyalanadi.
+- FAQ qoralamalari foydalanuvchi API’siga qaytarilmaydi va faqat administrator tomonidan nashr qilinadi.
+- Xabarlar HTML sifatida bajarilmaydi; uzunlik cheklovlari serverda tekshiriladi va barcha boshqaruv amallari audit jurnaliga yoziladi.
+- Yopilgan murojaatga foydalanuvchi ham, administrator ham yangi xabar qo‘sha olmaydi.
+
 ## Tarmoq
 
 - Backend dastlab faqat `127.0.0.1` manzilida ishlaydi.

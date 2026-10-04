@@ -397,6 +397,46 @@ export type NotificationFeed = {
   items: Notification[];
 };
 
+export type HelpFaq = {
+  id: string;
+  category: string;
+  question: string;
+  answer: string;
+  display_order: number;
+  is_published: boolean;
+  published_at: string | null;
+  created_at: string;
+};
+
+export type SupportTicketStatus = "open" | "in_progress" | "resolved" | "closed";
+export type SupportTicketPriority = "low" | "normal" | "high" | "urgent";
+
+export type SupportMessage = {
+  id: string;
+  author_user_id: string;
+  author_name: string;
+  message: string;
+  is_staff: boolean;
+  created_at: string;
+};
+
+export type SupportTicket = {
+  id: string;
+  user_id: string;
+  user_name: string;
+  user_email: string;
+  category: string;
+  subject: string;
+  status: SupportTicketStatus;
+  priority: SupportTicketPriority;
+  assigned_to_id: string | null;
+  assigned_to_name: string | null;
+  resolved_at: string | null;
+  created_at: string;
+  updated_at: string;
+  messages: SupportMessage[];
+};
+
 export type Material = {
   id: string;
   lesson_id: string;
