@@ -64,7 +64,6 @@ const tasks = [
 export default function Dashboard() {
   const [query, setQuery] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [noticeOpen, setNoticeOpen] = useState(false);
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
 
   const filteredCourses = useMemo(() => courses.filter((course) =>
@@ -106,15 +105,8 @@ export default function Dashboard() {
         <header className="topbar">
           <button className="mobileMenu" onClick={() => setMenuOpen(true)} aria-label="Menyuni ochish"><List /></button>
           <label className="searchBox"><MagnifyingGlass /><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Kurslar, darslar yoki topshiriqlarni qidiring..." /></label>
-          <button className="notification" onClick={() => setNoticeOpen((value) => !value)} aria-label="Bildirishnomalar"><Bell /><i /></button>
+          <Link className="notification" href="/notifications" aria-label="Bildirishnomalar"><Bell /><i /></Link>
           <Link className="headerProfile" href="/login"><span className="avatar avatarPhoto">MA</span><span><strong>Tizimga kirish</strong><small>Boshqaruv paneli</small></span><CaretDown /></Link>
-          {noticeOpen && (
-            <div className="noticePanel">
-              <div><strong>Bildirishnomalar</strong><span>2 ta yangi</span></div>
-              <p><b>Yangi dars ochildi</b><small>React Hooks • 12 daqiqa oldin</small></p>
-              <p><b>Vazifa muddati yaqin</b><small>React komponentlari • Bugun</small></p>
-            </div>
-          )}
         </header>
 
         <div className="content">

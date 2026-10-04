@@ -1,0 +1,19 @@
+.info {
+  color: #6551d2;
+  background: #eeeaff;
+}
+
+.important {
+  color: #ba6d24;
+  background: #fff1df;
+}
+
+.urgent {
+  color: #bd3d55;
+  background: #fff0f3;
+}
+
+.reset.reset {
+  color: inherit;
+  background: transparent;
+}

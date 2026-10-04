@@ -373,6 +373,30 @@ export type ResourceGroup = {
   resources: LibraryResource[];
 };
 
+export type NotificationAudience = "all" | "students" | "teachers" | "administrators";
+export type NotificationPriority = "info" | "important" | "urgent";
+
+export type Notification = {
+  id: string;
+  title: string;
+  message: string;
+  priority: NotificationPriority;
+  audience: NotificationAudience;
+  course_id: string | null;
+  course_title: string | null;
+  action_url: string | null;
+  is_published: boolean;
+  is_read: boolean;
+  expires_at: string | null;
+  published_at: string | null;
+  created_at: string;
+};
+
+export type NotificationFeed = {
+  unread_count: number;
+  items: Notification[];
+};
+
 export type Material = {
   id: string;
   lesson_id: string;

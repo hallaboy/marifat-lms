@@ -75,6 +75,14 @@
 - Fayl kengaytmasiga ishonilmaydi: PDF imzosi va Office ZIP konteyneri serverda tekshiriladi.
 - Tashqi havolalarda HTTPS, host, lokal domen va xususiy IP cheklovlari serverda tekshiriladi.
 
+## Bildirishnomalar xavfsizligi
+
+- Bildirishnoma yaratish, nashr qilish va o‘chirish faqat administrator roli hamda CSRF tekshiruvi orqali bajariladi.
+- Foydalanuvchi xabarlari sessiyadagi rol, tanlangan auditoriya va amaldagi kurs biriktiruvi bo‘yicha serverda filtrlanadi.
+- Nashr qilinmagan yoki muddati tugagan bildirishnomalar foydalanuvchi API’siga qaytarilmaydi.
+- O‘qilganlik yozuvi foydalanuvchi identifikatoriga bog‘langan; boshqa foydalanuvchi nomidan xabar holatini o‘zgartirish mumkin emas.
+- Amal havolalari faqat `/` bilan boshlanuvchi ichki platforma yo‘llari bo‘lishi mumkin; tashqi va protokolga bog‘liq havolalar rad etiladi.
+
 ## Tarmoq
 
 - Backend dastlab faqat `127.0.0.1` manzilida ishlaydi.

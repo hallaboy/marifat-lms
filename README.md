@@ -41,6 +41,7 @@ Butun lokal platformani ishga tushirish:
 - To‘lovlar boshqaruvi: `http://127.0.0.1:3000/admin/payments`
 - Taqvim boshqaruvi: `http://127.0.0.1:3000/admin/calendar`
 - Resurslar boshqaruvi: `http://127.0.0.1:3000/admin/resources`
+- Bildirishnomalar boshqaruvi: `http://127.0.0.1:3000/admin/notifications`
 - Talabaning kurslari: `http://127.0.0.1:3000/my-courses`
 - Talabaning testlari: `http://127.0.0.1:3000/assessments`
 - Talabaning uy vazifalari: `http://127.0.0.1:3000/assignments`
@@ -48,6 +49,7 @@ Butun lokal platformani ishga tushirish:
 - Talabaning to‘lovlari: `http://127.0.0.1:3000/payments`
 - Talabaning taqvimi: `http://127.0.0.1:3000/calendar`
 - Elektron resurslar: `http://127.0.0.1:3000/resources`
+- Bildirishnomalar markazi: `http://127.0.0.1:3000/notifications`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -130,6 +132,15 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Tashqi elektron resurslar faqat HTTPS havola orqali qo‘shiladi; lokal va xususiy IP manzillari rad etiladi.
 - Guruh va har bir resurs alohida nashr qilinadi. Foydalanuvchi faqat ikkala darajada ham nashr qilingan materiallarni ko‘radi.
 - Kutubxonada yo‘nalish bo‘yicha filtrlash va matnli qidiruv ishlaydi.
+
+## Bildirishnomalar markazi
+
+- Administrator barcha foydalanuvchilar, talabalar, o‘qituvchilar yoki administratorlar uchun e’lon yaratadi.
+- E’lonni muayyan kursga bog‘lash, oddiy, muhim yoki shoshilinch ustuvorlik berish va amal qilish muddatini belgilash mumkin.
+- Bildirishnomalar avval qoralama holatida yaratiladi va faqat alohida nashr qilingandan keyin tegishli foydalanuvchilarga ko‘rinadi.
+- Kursga bog‘langan xabarni talaba faqat shu kursga faol biriktirilgan bo‘lsa ko‘radi.
+- Har bir foydalanuvchining o‘qilganlik holati PostgreSQL bazasida alohida saqlanadi; bitta yoki barcha xabarni o‘qildi deb belgilash mumkin.
+- Xabardagi amal tugmasi faqat platforma ichidagi xavfsiz yo‘lga yo‘naltiriladi. Ushbu modul keyingi Telegram yetkazib berish kanali uchun asos bo‘ladi.
 
 ## Arxitektura chegarasi
 
