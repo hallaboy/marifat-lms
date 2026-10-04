@@ -1,0 +1,59 @@
+.shell { min-height: 100vh; background: #f6f7fb; color: #12213e; padding: 36px clamp(20px, 5vw, 76px) 70px; }
+.header { max-width: 1400px; margin: auto; display: grid; grid-template-columns: 220px 1fr 100px; align-items: center; gap: 24px; }
+.header > a { display: flex; align-items: center; gap: 8px; color: #6555d9; text-decoration: none; font-weight: 700; }
+.header > div p, .sectionTitle p { margin: 0 0 7px; color: #7768df; font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+.header h1 { margin: 0; font-size: clamp(30px, 4vw, 48px); letter-spacing: -.04em; }
+.header > div span { display: block; margin-top: 8px; color: #73809a; }
+.header > svg { justify-self: end; width: 72px; height: 72px; padding: 16px; color: #6956e8; background: #ece8ff; border-radius: 24px; }
+.state { max-width: 1400px; margin: 48px auto; padding: 28px; background: #fff; border: 1px solid #e4e7ef; border-radius: 18px; text-align: center; }
+.error { color: #b4233b; background: #fff3f5; }
+.primaryStats { max-width: 1400px; margin: 34px auto 20px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.primaryStats article { display: flex; gap: 14px; background: #fff; border: 1px solid #e5e8f0; border-radius: 20px; padding: 22px; box-shadow: 0 8px 30px rgba(34, 46, 80, .04); }
+.primaryStats article > span { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 15px; flex: none; }
+.primaryStats svg { width: 24px; height: 24px; }
+.purple { background: #eeeaff; color: #6651e4; }
+.blue { background: #e7f2ff; color: #3277d5; }
+.orange { background: #fff1df; color: #e27928; }
+.green { background: #e2f7ef; color: #188763; }
+.primaryStats small { display: block; color: #7f8aa0; }
+.primaryStats strong { display: block; font-size: 29px; margin: 5px 0; }
+.primaryStats p { margin: 0; color: #8c96a9; font-size: 12px; }
+.activity { max-width: 1400px; margin: 0 auto 22px; background: #152341; color: #fff; border-radius: 20px; padding: 21px 28px; display: flex; gap: 50px; }
+.activity > div { display: flex; align-items: center; gap: 12px; }
+.activity svg { width: 27px; height: 27px; color: #9e92ff; }
+.activity span { display: flex; align-items: baseline; gap: 8px; }
+.activity strong { font-size: 24px; }
+.activity small { color: #bbc4d4; }
+.courseSection { max-width: 1400px; margin: auto; background: #fff; border: 1px solid #e4e7ef; border-radius: 24px; padding: 28px; }
+.sectionTitle { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 23px; }
+.sectionTitle h2 { margin: 0; font-size: 25px; }
+.sectionTitle > span { background: #f0edff; color: #6250db; padding: 8px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+.tableWrap { overflow-x: auto; }
+.tableWrap table { width: 100%; border-collapse: collapse; min-width: 850px; }
+.tableWrap th { text-align: left; color: #8b95a8; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; padding: 13px 12px; border-bottom: 1px solid #e9ebf2; }
+.tableWrap td { padding: 18px 12px; border-bottom: 1px solid #eef0f5; color: #556078; }
+.tableWrap tbody tr:last-child td { border-bottom: 0; }
+.tableWrap td > a { color: #172642; text-decoration: none; font-weight: 800; }
+.tableWrap td b { display: block; color: #263653; }
+.tableWrap td small { display: block; margin-top: 3px; color: #99a1b0; }
+.progressCell { display: flex; align-items: center; gap: 9px; }
+.progressCell > span { width: 95px; height: 7px; background: #eceef4; border-radius: 10px; overflow: hidden; }
+.progressCell i { display: block; height: 100%; background: linear-gradient(90deg, #6651e4, #9a8bf3); border-radius: 10px; }
+.empty { text-align: center; padding: 55px 20px; color: #7b879d; }
+.empty svg { width: 48px; height: 48px; color: #7c69ea; }
+.empty h3 { color: #27354e; margin: 10px 0 5px; }
+.empty p { margin: 0; }
+@media (max-width: 1050px) {
+  .primaryStats { grid-template-columns: repeat(2, 1fr); }
+  .header { grid-template-columns: 180px 1fr; }
+  .header > svg { display: none; }
+}
+@media (max-width: 680px) {
+  .shell { padding: 22px 14px 50px; }
+  .header { grid-template-columns: 1fr; }
+  .header > a { order: 2; }
+  .primaryStats { grid-template-columns: 1fr; }
+  .activity { flex-direction: column; gap: 16px; }
+  .courseSection { padding: 20px 14px; }
+  .sectionTitle { align-items: flex-start; gap: 12px; }
+}

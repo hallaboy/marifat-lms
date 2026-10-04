@@ -37,9 +37,11 @@ Butun lokal platformani ishga tushirish:
 - Kursga biriktirish: `http://127.0.0.1:3000/admin/enrollments`
 - Testlar boshqaruvi: `http://127.0.0.1:3000/admin/assessments`
 - Uy vazifalari boshqaruvi: `http://127.0.0.1:3000/admin/assignments`
+- Admin analitikasi: `http://127.0.0.1:3000/admin/analytics`
 - Talabaning kurslari: `http://127.0.0.1:3000/my-courses`
 - Talabaning testlari: `http://127.0.0.1:3000/assessments`
 - Talabaning uy vazifalari: `http://127.0.0.1:3000/assignments`
+- Talabaning natijalari: `http://127.0.0.1:3000/results`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -87,6 +89,13 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Baholanmagan javobni yangilash mumkin; baholangandan keyin javob o‘zgartirilmaydi.
 - Administrator yuborilgan faylni ko‘rib, ball va izoh beradi; natija talaba kabinetida ko‘rinadi.
 - Topshiriq fayllari statik ochilmaydi va faqat ruxsati bor foydalanuvchiga API orqali beriladi.
+
+## Analitika va natijalar
+
+- Administrator umumiy kurs progressi, yakunlangan darslar, testlarning o‘rtacha bali va o‘tish ko‘rsatkichi hamda vazifalar bahosini kuzatadi.
+- Kurslar kesimidagi jadval biriktirilgan va kursni yakunlagan talabalar sonini, o‘rtacha progressni, test va vazifa faolligini ko‘rsatadi.
+- Talaba faqat o‘z kurs progressi, so‘nggi test urinishlari va yuborgan vazifalari natijalarini ko‘ra oladi.
+- Hisobot qiymatlari brauzerda hisoblanmaydi; ular PostgreSQL ma’lumotlari asosida backendda shakllantiriladi.
 
 ## Arxitektura chegarasi
 

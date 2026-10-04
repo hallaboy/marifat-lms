@@ -205,6 +205,83 @@ export type StudentAssignment = Assignment & {
   submission: AssignmentSubmission | null;
 };
 
+export type AdminAnalyticsOverview = {
+  total_enrollments: number;
+  active_enrollments: number;
+  completed_enrollments: number;
+  average_course_progress: number;
+  completed_lessons: number;
+  submitted_assessments: number;
+  average_assessment_score: number;
+  assessment_pass_rate: number;
+  assignment_submissions: number;
+  graded_assignments: number;
+  average_assignment_score: number;
+};
+
+export type CourseAnalytics = {
+  course_id: string;
+  course_title: string;
+  enrollment_count: number;
+  completed_enrollments: number;
+  average_progress: number;
+  submitted_assessments: number;
+  average_assessment_score: number;
+  assignment_submissions: number;
+};
+
+export type AdminAnalytics = {
+  overview: AdminAnalyticsOverview;
+  courses: CourseAnalytics[];
+};
+
+export type StudentCourseResult = {
+  course_id: string;
+  course_title: string;
+  status: EnrollmentStatus;
+  progress_percent: number;
+  completed_lessons: number;
+  total_lessons: number;
+};
+
+export type StudentAssessmentResult = {
+  assessment_id: string;
+  title: string;
+  course_title: string;
+  attempt_number: number;
+  score_percent: number;
+  passed: boolean;
+  submitted_at: string;
+};
+
+export type StudentAssignmentResult = {
+  assignment_id: string;
+  title: string;
+  course_title: string;
+  status: "submitted" | "graded";
+  score: number | null;
+  max_score: number;
+  score_percent: number | null;
+  feedback: string | null;
+  submitted_at: string;
+};
+
+export type StudentAnalyticsSummary = {
+  enrolled_courses: number;
+  completed_courses: number;
+  completed_lessons: number;
+  average_assessment_score: number;
+  passed_assessments: number;
+  average_assignment_score: number;
+};
+
+export type StudentAnalytics = {
+  summary: StudentAnalyticsSummary;
+  courses: StudentCourseResult[];
+  assessments: StudentAssessmentResult[];
+  assignments: StudentAssignmentResult[];
+};
+
 export type Material = {
   id: string;
   lesson_id: string;

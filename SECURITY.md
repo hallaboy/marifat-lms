@@ -46,6 +46,12 @@
 - Muddat, kech yuborish va maksimal ball cheklovlari backendda tekshiriladi.
 - Baholangan javobni talaba qayta yubora olmaydi; yuborish va baholash amallari audit jurnaliga yoziladi.
 
+## Analitika xavfsizligi
+
+- Tizim miqyosidagi analitika faqat `super_admin` va `admin` rollariga beriladi.
+- Talaba analitikasi foydalanuvchining serverdagi sessiya identifikatoriga bog‘lanadi va faqat uning o‘z enrollment, test hamda vazifa yozuvlarini qamrab oladi.
+- Frontenddagi yo‘naltirish qo‘shimcha qulaylik hisoblanadi; asosiy rol va ma’lumotlarga kirish nazorati har bir API so‘rovida backendda bajariladi.
+
 ## Tarmoq
 
 - Backend dastlab faqat `127.0.0.1` manzilida ishlaydi.
