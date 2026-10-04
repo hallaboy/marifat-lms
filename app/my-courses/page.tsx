@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, BookOpen, CheckCircle, Clock, LockKey, SignOut, Stack } from "@phosphor-icons/react";
+import { ArrowRight, BookOpen, CheckCircle, Clock, Exam, LockKey, SignOut, Stack } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -46,7 +46,7 @@ export default function MyCoursesPage() {
 
   return (
     <main className={styles.shell}>
-      <header><Link href="/" className={styles.brand}><BookOpen weight="fill" />ma&apos;rifat</Link><div><span>{user?.full_name}</span><button onClick={logout}><SignOut /> Chiqish</button></div></header>
+      <header><Link href="/" className={styles.brand}><BookOpen weight="fill" />ma&apos;rifat</Link><div><Link href="/assessments" style={{ color: "#6048dc", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}><Exam /> Testlar</Link><span>{user?.full_name}</span><button onClick={logout}><SignOut /> Chiqish</button></div></header>
       <section className={styles.hero}><p>SHAXSIY KABINET</p><h1>Mening kurslarim</h1><span>Biriktirilgan kurslarni davom ettiring va natijangizni kuzating.</span></section>
       <section className={styles.grid}>
         {loading && <div className={styles.state}>Kurslar yuklanmoqda…</div>}

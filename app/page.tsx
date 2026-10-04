@@ -46,7 +46,7 @@ const courses: Course[] = [
 const navItems = [
   { label: "Bosh sahifa", icon: House, href: "/" },
   { label: "Kurslarim", icon: BookOpen, href: "/my-courses" },
-  { label: "Topshiriqlar", icon: Exam, badge: 3, href: "/assignments" },
+  { label: "Testlar", icon: Exam, badge: 3, href: "/assessments" },
   { label: "Taqvim", icon: CalendarBlank, href: "/calendar" },
   { label: "Natijalar", icon: ChartBar, href: "/results" },
 ];

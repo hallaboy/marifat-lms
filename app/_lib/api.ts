@@ -89,6 +89,79 @@ export type CourseProgress = {
   completed_lesson_ids: string[];
 };
 
+export type Assessment = {
+  id: string;
+  course_id: string;
+  course_title: string;
+  lesson_id: string | null;
+  title: string;
+  instructions: string | null;
+  assessment_type: "quiz" | "exam";
+  passing_score: number;
+  max_attempts: number;
+  time_limit_minutes: number | null;
+  is_published: boolean;
+  question_count: number;
+  published_at: string | null;
+  created_at: string;
+};
+
+export type AdminAssessmentOption = {
+  id: string;
+  text: string;
+  position: number;
+  is_correct: boolean;
+};
+
+export type AdminAssessmentQuestion = {
+  id: string;
+  prompt: string;
+  position: number;
+  points: number;
+  options: AdminAssessmentOption[];
+};
+
+export type AdminAssessmentDetail = Assessment & {
+  questions: AdminAssessmentQuestion[];
+};
+
+export type StudentAssessment = Assessment & {
+  attempts_used: number;
+  latest_score_percent: number | null;
+  latest_passed: boolean | null;
+};
+
+export type StudentAssessmentQuestion = {
+  id: string;
+  prompt: string;
+  position: number;
+  points: number;
+  options: { id: string; text: string; position: number }[];
+};
+
+export type StudentAssessmentDetail = StudentAssessment & {
+  questions: StudentAssessmentQuestion[];
+};
+
+export type AssessmentAttempt = {
+  id: string;
+  assessment_id: string;
+  attempt_number: number;
+  status: "in_progress" | "submitted" | "expired";
+  started_at: string;
+  expires_at: string | null;
+};
+
+export type AssessmentResult = {
+  attempt_id: string;
+  attempt_number: number;
+  score_percent: number;
+  points_earned: number;
+  total_points: number;
+  passed: boolean;
+  submitted_at: string;
+};
+
 export type Material = {
   id: string;
   lesson_id: string;

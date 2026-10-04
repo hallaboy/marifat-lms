@@ -30,6 +30,14 @@
 - Progress faqat tizimga kirgan talabaning o‘z enrollment yozuviga va CSRF bilan himoyalangan so‘rov orqali yoziladi.
 - Kursga biriktirish va uning holatini o‘zgartirish faqat administrator roliga ruxsat etilgan va audit jurnaliga yoziladi.
 
+## Test xavfsizligi
+
+- To‘g‘ri javob belgisi faqat backend va PostgreSQL bazasida saqlanadi; talaba uchun savol javobida bu maydon yo‘q.
+- Testni boshlash va topshirish CSRF, foydalanuvchi roli hamda kursga biriktirilganlik bilan tekshiriladi.
+- Vaqt chegarasi va urinishlar limiti brauzerga ishonmasdan server vaqtida nazorat qilinadi.
+- Javob varianti aynan yuborilgan savolga tegishli ekanligi serverda tekshiriladi.
+- Bir urinishni qayta topshirish va boshqa talabaning urinishidan foydalanish bloklanadi.
+
 ## Tarmoq
 
 - Backend dastlab faqat `127.0.0.1` manzilida ishlaydi.
