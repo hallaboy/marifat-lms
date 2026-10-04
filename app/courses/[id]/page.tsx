@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, BookOpen, CheckCircle, Clock, FileText, GameController, Headphones, LinkSimple, LockKey, Video, YoutubeLogo } from "@phosphor-icons/react";
+import { ArrowLeft, ArrowSquareOut, BookOpen, CheckCircle, Clock, FileText, GameController, Headphones, LinkSimple, LockKey, Video, YoutubeLogo } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -13,7 +13,11 @@ function resolvedUrl(url: string) { return url.startsWith("/") ? `${API_ORIGIN}$
 
 function MaterialView({ material }: { material: Material }) {
   const url = resolvedUrl(material.url);
-  if (material.material_type === "youtube") return <div className={media.embed}><iframe src={url} title={material.title} sandbox="allow-scripts allow-same-origin allow-presentation" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div>;
+  if (material.material_type === "youtube") {
+    const videoId = material.url.match(/\/embed\/([A-Za-z0-9_-]{11})/)?.[1];
+    const watchUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : material.url;
+    return <div className={media.youtubeBlock}><div className={media.embed}><iframe src={url} title={material.title} sandbox="allow-scripts allow-same-origin allow-presentation allow-popups allow-popups-to-escape-sandbox" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div><div className={media.youtubeFallback}><span>Agar video ichki oynada ochilmasa, YouTube’da bevosita ko‘ring.</span><a href={watchUrl} target="_blank" rel="noopener noreferrer"><YoutubeLogo weight="fill" /> YouTube’da ochish <ArrowSquareOut /></a></div></div>;
+  }
   if (material.material_type === "video") return <video className={media.player} controls preload="metadata" src={url}>Brauzeringiz videoni qo‘llamaydi.</video>;
   if (material.material_type === "audio") return <audio className={media.audio} controls preload="metadata" src={url}>Brauzeringiz audioni qo‘llamaydi.</audio>;
   const Icon = material.material_type === "document" ? FileText : material.material_type === "game" ? GameController : LinkSimple;

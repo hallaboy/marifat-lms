@@ -56,6 +56,7 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 ## Multimedia materiallari
 
 - YouTube havolalari `youtube-nocookie.com` embed formatiga normallashtiriladi.
+- Video egasi tashqi saytda ko‘rsatishni cheklagan holatda talaba uchun xavfsiz “YouTube’da ochish” fallback tugmasi ko‘rsatiladi.
 - Video: `.mp4`, `.webm` — 512 MB gacha.
 - Audio: `.mp3`, `.m4a`, `.wav` — 100 MB gacha.
 - Hujjat: `.pdf`, `.docx`, `.pptx`, `.xlsx` — 50 MB gacha.
