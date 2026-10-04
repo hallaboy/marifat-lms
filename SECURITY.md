@@ -60,6 +60,13 @@
 - Provayder operatsiya raqami takrorlanmaydi va serverda ruxsat etilgan belgilar bo‘yicha tekshiriladi.
 - Karta rekvizitlari, CVV yoki to‘liq karta raqami platforma bazasida saqlanmaydi.
 
+## Taqvim xavfsizligi
+
+- Taqvim tadbirlarini yaratish, nashr qilish va o‘chirish admin roli hamda CSRF himoyasi bilan cheklangan.
+- Talaba taqvim so‘rovi serverdagi enrollment yozuvlari bo‘yicha filtrlanadi; boshqa kurs tadbirlari qaytarilmaydi.
+- Qoralama tadbirlar talaba API’siga kiritilmaydi.
+- Jonli dars va uchrashuv havolalari faqat HTTPS bo‘lsa saqlanadi.
+
 ## Tarmoq
 
 - Backend dastlab faqat `127.0.0.1` manzilida ishlaydi.

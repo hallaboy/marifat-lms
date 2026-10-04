@@ -313,6 +313,36 @@ export type PaymentSummary = {
   paid_count: number;
 };
 
+export type CalendarEventType = "live_lesson" | "exam" | "meeting" | "deadline" | "other";
+
+export type CalendarEvent = {
+  id: string;
+  course_id: string;
+  course_title: string;
+  title: string;
+  description: string | null;
+  event_type: CalendarEventType;
+  starts_at: string;
+  ends_at: string | null;
+  meeting_url: string | null;
+  is_published: boolean;
+  published_at: string | null;
+  created_at: string;
+};
+
+export type StudentCalendarItem = {
+  id: string;
+  source: "event" | "assignment";
+  course_id: string;
+  course_title: string;
+  title: string;
+  description: string | null;
+  event_type: CalendarEventType | "assignment_due";
+  starts_at: string;
+  ends_at: string | null;
+  meeting_url: string | null;
+};
+
 export type Material = {
   id: string;
   lesson_id: string;

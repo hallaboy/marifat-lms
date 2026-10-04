@@ -39,11 +39,13 @@ Butun lokal platformani ishga tushirish:
 - Uy vazifalari boshqaruvi: `http://127.0.0.1:3000/admin/assignments`
 - Admin analitikasi: `http://127.0.0.1:3000/admin/analytics`
 - To‘lovlar boshqaruvi: `http://127.0.0.1:3000/admin/payments`
+- Taqvim boshqaruvi: `http://127.0.0.1:3000/admin/calendar`
 - Talabaning kurslari: `http://127.0.0.1:3000/my-courses`
 - Talabaning testlari: `http://127.0.0.1:3000/assessments`
 - Talabaning uy vazifalari: `http://127.0.0.1:3000/assignments`
 - Talabaning natijalari: `http://127.0.0.1:3000/results`
 - Talabaning to‘lovlari: `http://127.0.0.1:3000/payments`
+- Talabaning taqvimi: `http://127.0.0.1:3000/calendar`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -109,6 +111,14 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Administrator qo‘lda hisob yaratishi, to‘lov usuli va provayder operatsiya raqami bilan to‘lovni tasdiqlashi, hisobni bekor qilishi yoki to‘lovni qaytarilgan deb belgilashi mumkin.
 - Talaba faqat o‘z hisoblari va to‘lov tarixini ko‘radi.
 - Click, Payme va Uzum usullari ma’lumot modelida tayyor, lekin provayder webhooklari ulanmaguncha to‘lovlar administrator tomonidan tasdiqlanadi.
+
+## Taqvim va o‘quv jadvali
+
+- Administrator kurs uchun jonli dars, imtihon, uchrashuv yoki muhim muddat yaratadi va talabalarga nashr qiladi.
+- Boshlanish va tugash vaqti tekshiriladi, tashqi uchrashuv havolalari faqat HTTPS orqali qabul qilinadi.
+- Talaba faqat o‘zi biriktirilgan kurslarning nashr qilingan tadbirlarini ko‘radi.
+- Nashr qilingan uy vazifalarining topshirish muddatlari talaba taqvimiga avtomatik qo‘shiladi.
+- Taqvim ma’lumotlari keyingi Telegram eslatmalari integratsiyasi uchun tayyor asos hisoblanadi.
 
 ## Arxitektura chegarasi
 
