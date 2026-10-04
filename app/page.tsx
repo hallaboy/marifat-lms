@@ -6,6 +6,7 @@ import {
   ArrowRight,
   Bell,
   BookOpen,
+  Books,
   CalendarBlank,
   CaretDown,
   ChartBar,
@@ -51,6 +52,7 @@ const navItems = [
   { label: "Uy vazifalari", icon: ClipboardText, badge: 3, href: "/assignments" },
   { label: "Taqvim", icon: CalendarBlank, href: "/calendar" },
   { label: "Natijalar", icon: ChartBar, href: "/results" },
+  { label: "Resurslar", icon: Books, href: "/resources" },
 ];
 
 const tasks = [

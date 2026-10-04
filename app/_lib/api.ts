@@ -343,6 +343,36 @@ export type StudentCalendarItem = {
   meeting_url: string | null;
 };
 
+export type LibraryResourceType = "textbook" | "methodology" | "recommendation" | "presentation" | "other";
+
+export type LibraryResource = {
+  id: string;
+  group_id: string;
+  title: string;
+  description: string | null;
+  resource_type: LibraryResourceType;
+  url: string;
+  original_filename: string | null;
+  mime_type: string | null;
+  size_bytes: number | null;
+  display_order: number;
+  is_published: boolean;
+  published_at: string | null;
+  created_at: string;
+};
+
+export type ResourceGroup = {
+  id: string;
+  name: string;
+  slug: string;
+  direction: string;
+  description: string;
+  is_published: boolean;
+  published_at: string | null;
+  created_at: string;
+  resources: LibraryResource[];
+};
+
 export type Material = {
   id: string;
   lesson_id: string;

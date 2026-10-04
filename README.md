@@ -40,12 +40,14 @@ Butun lokal platformani ishga tushirish:
 - Admin analitikasi: `http://127.0.0.1:3000/admin/analytics`
 - To‘lovlar boshqaruvi: `http://127.0.0.1:3000/admin/payments`
 - Taqvim boshqaruvi: `http://127.0.0.1:3000/admin/calendar`
+- Resurslar boshqaruvi: `http://127.0.0.1:3000/admin/resources`
 - Talabaning kurslari: `http://127.0.0.1:3000/my-courses`
 - Talabaning testlari: `http://127.0.0.1:3000/assessments`
 - Talabaning uy vazifalari: `http://127.0.0.1:3000/assignments`
 - Talabaning natijalari: `http://127.0.0.1:3000/results`
 - Talabaning to‘lovlari: `http://127.0.0.1:3000/payments`
 - Talabaning taqvimi: `http://127.0.0.1:3000/calendar`
+- Elektron resurslar: `http://127.0.0.1:3000/resources`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -119,6 +121,15 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Talaba faqat o‘zi biriktirilgan kurslarning nashr qilingan tadbirlarini ko‘radi.
 - Nashr qilingan uy vazifalarining topshirish muddatlari talaba taqvimiga avtomatik qo‘shiladi.
 - Taqvim ma’lumotlari keyingi Telegram eslatmalari integratsiyasi uchun tayyor asos hisoblanadi.
+
+## Elektron resurslar kutubxonasi
+
+- Administrator yo‘nalishlar bo‘yicha mustaqil resurs guruhlarini yaratadi.
+- Har bir guruhga darslik, metodik qo‘llanma, tavsiya, taqdimot yoki boshqa turdagi resurs joylanadi.
+- PDF, DOCX, PPTX va XLSX fayllari 50 MB gacha qabul qilinadi va fayl imzosi yoki Office konteyner tuzilmasi serverda tekshiriladi.
+- Tashqi elektron resurslar faqat HTTPS havola orqali qo‘shiladi; lokal va xususiy IP manzillari rad etiladi.
+- Guruh va har bir resurs alohida nashr qilinadi. Foydalanuvchi faqat ikkala darajada ham nashr qilingan materiallarni ko‘radi.
+- Kutubxonada yo‘nalish bo‘yicha filtrlash va matnli qidiruv ishlaydi.
 
 ## Arxitektura chegarasi
 

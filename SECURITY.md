@@ -67,6 +67,14 @@
 - Qoralama tadbirlar talaba API’siga kiritilmaydi.
 - Jonli dars va uchrashuv havolalari faqat HTTPS bo‘lsa saqlanadi.
 
+## Resurslar kutubxonasi xavfsizligi
+
+- Resurs guruhlari va materiallarini yaratish, nashr qilish yoki o‘chirish faqat administrator va CSRF himoyasi bilan bajariladi.
+- Foydalanuvchilar faqat nashr qilingan guruhlardagi nashr qilingan resurslarni oladi; qoralama material identifikator orqali ham ochilmaydi.
+- Kutubxona fayllari statik papka sifatida ochilmaydi va autentifikatsiyalangan API orqali beriladi.
+- Fayl kengaytmasiga ishonilmaydi: PDF imzosi va Office ZIP konteyneri serverda tekshiriladi.
+- Tashqi havolalarda HTTPS, host, lokal domen va xususiy IP cheklovlari serverda tekshiriladi.
+
 ## Tarmoq
 
 - Backend dastlab faqat `127.0.0.1` manzilida ishlaydi.
