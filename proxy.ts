@@ -12,7 +12,8 @@ export function proxy(request: NextRequest) {
     img-src 'self' blob: data:;
     font-src 'self';
     connect-src 'self' ${apiOrigin};
-    media-src 'self' blob:;
+    media-src 'self' blob: ${apiOrigin} https:;
+    frame-src 'self' https://www.youtube-nocookie.com;
     object-src 'none';
     base-uri 'self';
     form-action 'self';

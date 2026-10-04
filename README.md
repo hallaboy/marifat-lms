@@ -33,6 +33,7 @@ Butun lokal platformani ishga tushirish:
 - Admin panel: `http://127.0.0.1:3000/admin`
 - Kurslar katalogi: `http://127.0.0.1:3000/courses`
 - Kurslar boshqaruvi: `http://127.0.0.1:3000/admin/courses`
+- Multimedia kutubxonasi: `http://127.0.0.1:3000/admin/materials`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -45,6 +46,16 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Faqat `published` kurslar umumiy katalogda ko‘rinadi.
 - Video va jonli dars havolalari faqat HTTPS orqali qabul qilinadi.
 - Barcha kurs va dars yaratish amallari serverda admin roli va CSRF token bilan tekshiriladi.
+
+## Multimedia materiallari
+
+- YouTube havolalari `youtube-nocookie.com` embed formatiga normallashtiriladi.
+- Video: `.mp4`, `.webm` — 512 MB gacha.
+- Audio: `.mp3`, `.m4a`, `.wav` — 100 MB gacha.
+- Hujjat: `.pdf`, `.docx`, `.pptx`, `.xlsx` — 50 MB gacha.
+- Gamifikatsiya/o‘yin va qo‘shimcha havolalar faqat HTTPS orqali qabul qilinadi.
+- Fayl nomi va brauzer yuborgan MIME qiymatiga ishonilmaydi; haqiqiy format serverda tekshiriladi.
+- Fayllar `D:\LMS-Server\uploads\course-materials` ichida tasodifiy nom bilan saqlanadi va faqat autentifikatsiyalangan API orqali uzatiladi.
 
 ## Arxitektura chegarasi
 

@@ -59,6 +59,7 @@ export default function AdminPage() {
           <Link href="/admin" className={styles.active}><Gauge weight="fill" />Umumiy ko‘rinish</Link>
           <Link href="/users"><Users />Foydalanuvchilar</Link>
           <Link href="/admin/courses"><BookOpen />Kurslar</Link>
+          <Link href="/admin/materials"><BookOpen />Multimedia</Link>
         </nav>
         <button onClick={logout}><SignOut />Tizimdan chiqish</button>
       </aside>

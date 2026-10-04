@@ -15,6 +15,14 @@
 - Besh marta noto‘g‘ri parol kiritilganda hisob vaqtincha bloklanadi.
 - Login, logout va administrator amallari audit jurnaliga yoziladi.
 
+## Fayl yuklash
+
+- Ruxsat etilmagan bajariluvchi va skript fayllari qabul qilinmaydi.
+- PDF, Office, audio va video formatlari fayl imzosi/konteyner tuzilmasi bo‘yicha tekshiriladi.
+- Saqlash kalitlari tasodifiy yaratiladi; foydalanuvchi fayl nomi disk yo‘li sifatida ishlatilmaydi.
+- Fayllar hajmi turiga qarab cheklanadi va SHA-256 nazorat summasi yoziladi.
+- Lokal material fayllari statik katalog sifatida ochilmaydi; yuklab olishda sessiya va kurs ruxsati tekshiriladi.
+
 ## Tarmoq
 
 - Backend dastlab faqat `127.0.0.1` manzilida ishlaydi.

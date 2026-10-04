@@ -46,18 +46,33 @@ export type Lesson = {
   is_preview: boolean;
   is_published: boolean;
   created_at: string;
+  materials: Material[];
 };
 
 export type CourseDetail = Course & { lessons: Lesson[] };
 
+export type Material = {
+  id: string;
+  lesson_id: string;
+  title: string;
+  material_type: "youtube" | "video" | "audio" | "document" | "game" | "link";
+  url: string;
+  original_filename: string | null;
+  mime_type: string | null;
+  size_bytes: number | null;
+  display_order: number;
+  is_downloadable: boolean;
+  created_at: string;
+};
+
 export async function apiFetch(path: string, init: RequestInit = {}) {
+  const headers = new Headers(init.headers);
+  const isFormData = typeof FormData !== "undefined" && init.body instanceof FormData;
+  if (!isFormData && !headers.has("Content-Type")) headers.set("Content-Type", "application/json");
   return fetch(`${API_ORIGIN}${path}`, {
     ...init,
     credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-      ...init.headers,
-    },
+    headers,
   });
 }
 
