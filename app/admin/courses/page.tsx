@@ -19,7 +19,7 @@ import { apiFetch, Assessment, AuthUser, Course, readCsrfCookie } from "../../_l
 import styles from "./styles.module.css";
 
 const statusNames = { draft: "Qoralama", published: "Nashr qilingan", archived: "Arxiv" };
-const emptyCourseForm = { title: "", slug: "", summary: "", category: "", level: "beginner", duration_weeks: 6, teacher_id: "" };
+const emptyCourseForm = { title: "", slug: "", summary: "", category: "", level: "beginner", duration_weeks: 6, price_uzs: 0, teacher_id: "" };
 const emptyQuizForm = { title: "", instructions: "", passing_score: 70, max_attempts: 2, time_limit_minutes: 20 };
 
 function slugify(value: string) {
@@ -178,6 +178,7 @@ export default function AdminCoursesPage() {
             <label>Yo‘nalish<input value={courseForm.category} onChange={(event) => setCourseForm({ ...courseForm, category: event.target.value })} required /></label>
             <label>Daraja<select value={courseForm.level} onChange={(event) => setCourseForm({ ...courseForm, level: event.target.value })}><option value="beginner">Boshlang‘ich</option><option value="intermediate">O‘rta</option><option value="advanced">Yuqori</option></select></label>
             <label>Davomiyligi (hafta)<input type="number" min="1" max="104" value={courseForm.duration_weeks} onChange={(event) => setCourseForm({ ...courseForm, duration_weeks: Number(event.target.value) })} /></label>
+            <label>Kurs narxi (so‘m)<input type="number" min="0" max="2000000000" step="1000" value={courseForm.price_uzs} onChange={(event) => setCourseForm({ ...courseForm, price_uzs: Number(event.target.value) })} /><small>0 — bepul kurs</small></label>
             <label>O‘qituvchi<select value={courseForm.teacher_id} onChange={(event) => setCourseForm({ ...courseForm, teacher_id: event.target.value })}><option value="">Keyin biriktirish</option>{teachers.map((teacher) => <option key={teacher.id} value={teacher.id}>{teacher.full_name}</option>)}</select></label>
             <label className={`${styles.wide} ${styles.courseOption}`}><input type="checkbox" checked={addQuizAfterCourse} onChange={(event) => setAddQuizAfterCourse(event.target.checked)} /><span><b>Kurs bilan birga quiz yaratish</b><small>Kurs saqlangach, quiz sozlamalari avtomatik ochiladi.</small></span></label>
             <div className={styles.actions}><button type="button" onClick={() => setShowCourseForm(false)}>Bekor qilish</button><button type="submit"><FilePlus /> Kurs yaratish</button></div>

@@ -26,6 +26,7 @@ export type Course = {
   category: string;
   level: "beginner" | "intermediate" | "advanced";
   duration_weeks: number;
+  price_uzs: number;
   status: "draft" | "published" | "archived";
   teacher_id: string | null;
   teacher_name: string | null;
@@ -280,6 +281,36 @@ export type StudentAnalytics = {
   courses: StudentCourseResult[];
   assessments: StudentAssessmentResult[];
   assignments: StudentAssignmentResult[];
+};
+
+export type PaymentStatus = "pending" | "paid" | "cancelled" | "refunded";
+export type PaymentMethod = "cash" | "bank_transfer" | "card" | "click" | "payme" | "uzum" | "other";
+
+export type Payment = {
+  id: string;
+  enrollment_id: string;
+  course_id: string;
+  course_title: string;
+  student_id: string;
+  student_name: string;
+  student_email: string;
+  amount_uzs: number;
+  status: PaymentStatus;
+  payment_method: PaymentMethod | null;
+  provider_reference: string | null;
+  note: string | null;
+  due_at: string | null;
+  paid_at: string | null;
+  created_at: string;
+};
+
+export type PaymentSummary = {
+  total_invoiced_uzs: number;
+  paid_uzs: number;
+  pending_uzs: number;
+  refunded_uzs: number;
+  pending_count: number;
+  paid_count: number;
 };
 
 export type Material = {

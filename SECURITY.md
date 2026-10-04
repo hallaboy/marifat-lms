@@ -52,6 +52,14 @@
 - Talaba analitikasi foydalanuvchining serverdagi sessiya identifikatoriga bog‘lanadi va faqat uning o‘z enrollment, test hamda vazifa yozuvlarini qamrab oladi.
 - Frontenddagi yo‘naltirish qo‘shimcha qulaylik hisoblanadi; asosiy rol va ma’lumotlarga kirish nazorati har bir API so‘rovida backendda bajariladi.
 
+## To‘lovlar xavfsizligi
+
+- Moliyaviy hisob yaratish, tasdiqlash, bekor qilish va qaytarish faqat administrator roli hamda CSRF tekshiruvidan keyin bajariladi.
+- Talaba API’si sessiyadagi foydalanuvchi identifikatori orqali faqat uning enrollment yozuvlariga tegishli hisoblarni qaytaradi.
+- Tasdiqlangan to‘lov oddiy `pending` yoki `cancelled` holatiga qaytarilmaydi; faqat auditlanadigan `refunded` jarayoni mavjud.
+- Provayder operatsiya raqami takrorlanmaydi va serverda ruxsat etilgan belgilar bo‘yicha tekshiriladi.
+- Karta rekvizitlari, CVV yoki to‘liq karta raqami platforma bazasida saqlanmaydi.
+
 ## Tarmoq
 
 - Backend dastlab faqat `127.0.0.1` manzilida ishlaydi.

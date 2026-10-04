@@ -38,10 +38,12 @@ Butun lokal platformani ishga tushirish:
 - Testlar boshqaruvi: `http://127.0.0.1:3000/admin/assessments`
 - Uy vazifalari boshqaruvi: `http://127.0.0.1:3000/admin/assignments`
 - Admin analitikasi: `http://127.0.0.1:3000/admin/analytics`
+- To‘lovlar boshqaruvi: `http://127.0.0.1:3000/admin/payments`
 - Talabaning kurslari: `http://127.0.0.1:3000/my-courses`
 - Talabaning testlari: `http://127.0.0.1:3000/assessments`
 - Talabaning uy vazifalari: `http://127.0.0.1:3000/assignments`
 - Talabaning natijalari: `http://127.0.0.1:3000/results`
+- Talabaning to‘lovlari: `http://127.0.0.1:3000/payments`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -99,6 +101,14 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Kurslar kesimidagi jadval biriktirilgan va kursni yakunlagan talabalar sonini, o‘rtacha progressni, test va vazifa faolligini ko‘rsatadi.
 - Talaba faqat o‘z kurs progressi, so‘nggi test urinishlari va yuborgan vazifalari natijalarini ko‘ra oladi.
 - Hisobot qiymatlari brauzerda hisoblanmaydi; ular PostgreSQL ma’lumotlari asosida backendda shakllantiriladi.
+
+## Moliyaviy hisob va to‘lovlar
+
+- Kurs narxi so‘mda belgilanadi; `0` qiymati bepul kursni bildiradi.
+- Pullik kursga talaba biriktirilganda uning nomiga `pending` holatidagi hisob avtomatik yaratiladi.
+- Administrator qo‘lda hisob yaratishi, to‘lov usuli va provayder operatsiya raqami bilan to‘lovni tasdiqlashi, hisobni bekor qilishi yoki to‘lovni qaytarilgan deb belgilashi mumkin.
+- Talaba faqat o‘z hisoblari va to‘lov tarixini ko‘radi.
+- Click, Payme va Uzum usullari ma’lumot modelida tayyor, lekin provayder webhooklari ulanmaguncha to‘lovlar administrator tomonidan tasdiqlanadi.
 
 ## Arxitektura chegarasi
 

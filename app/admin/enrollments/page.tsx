@@ -78,7 +78,7 @@ export default function AdminEnrollmentsPage() {
         <form className={styles.form} onSubmit={createEnrollment}>
           <div><UserPlus weight="duotone" /><span><h2>Yangi biriktirish</h2><p>Faol talaba va kerakli kursni tanlang.</p></span></div>
           <label>Talaba<select value={form.student_id} onChange={(event) => setForm({ ...form, student_id: event.target.value })} required><option value="">Talabani tanlang</option>{students.map((student) => <option key={student.id} value={student.id}>{student.full_name} — {student.email}</option>)}</select></label>
-          <label>Kurs<select value={form.course_id} onChange={(event) => setForm({ ...form, course_id: event.target.value })} required><option value="">Kursni tanlang</option>{courses.map((course) => <option key={course.id} value={course.id}>{course.title} ({course.status})</option>)}</select></label>
+          <label>Kurs<select value={form.course_id} onChange={(event) => setForm({ ...form, course_id: event.target.value })} required><option value="">Kursni tanlang</option>{courses.map((course) => <option key={course.id} value={course.id}>{course.title} — {course.price_uzs > 0 ? `${course.price_uzs.toLocaleString("uz-UZ")} so‘m` : "bepul"}</option>)}</select></label>
           <button type="submit"><UserPlus /> Biriktirish</button>
         </form>
         <section className={styles.list}><div className={styles.listHead}><span><Users /><h2>Biriktirilgan talabalar</h2></span><b>{enrollments.length}</b></div>

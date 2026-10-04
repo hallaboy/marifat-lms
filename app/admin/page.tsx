@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, ChalkboardTeacher, ChartBar, ClipboardText, Exam, Gauge, SignOut, Student, UserPlus, Users } from "@phosphor-icons/react";
+import { BookOpen, ChalkboardTeacher, ChartBar, ClipboardText, CreditCard, Exam, Gauge, SignOut, Student, UserPlus, Users } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -63,6 +63,7 @@ export default function AdminPage() {
           <Link href="/admin/assessments"><Exam />Testlar</Link>
           <Link href="/admin/assignments"><ClipboardText />Uy vazifalari</Link>
           <Link href="/admin/analytics"><ChartBar />Analitika</Link>
+          <Link href="/admin/payments"><CreditCard />To‘lovlar</Link>
           <Link href="/admin/materials"><BookOpen />Multimedia</Link>
         </nav>
         <button onClick={logout}><SignOut />Tizimdan chiqish</button>
