@@ -10,6 +10,7 @@ import {
   CaretDown,
   ChartBar,
   Check,
+  ClipboardText,
   Clock,
   CreditCard,
   Exam,
@@ -46,7 +47,8 @@ const courses: Course[] = [
 const navItems = [
   { label: "Bosh sahifa", icon: House, href: "/" },
   { label: "Kurslarim", icon: BookOpen, href: "/my-courses" },
-  { label: "Testlar", icon: Exam, badge: 3, href: "/assessments" },
+  { label: "Testlar", icon: Exam, href: "/assessments" },
+  { label: "Uy vazifalari", icon: ClipboardText, badge: 3, href: "/assignments" },
   { label: "Taqvim", icon: CalendarBlank, href: "/calendar" },
   { label: "Natijalar", icon: ChartBar, href: "/results" },
 ];

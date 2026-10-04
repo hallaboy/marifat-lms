@@ -162,6 +162,49 @@ export type AssessmentResult = {
   submitted_at: string;
 };
 
+export type AssignmentSubmission = {
+  id: string;
+  assignment_id: string;
+  student_id: string;
+  student_name: string;
+  student_email: string;
+  submission_text: string | null;
+  file_url: string | null;
+  original_filename: string | null;
+  mime_type: string | null;
+  size_bytes: number | null;
+  status: "submitted" | "graded";
+  score: number | null;
+  feedback: string | null;
+  submitted_at: string;
+  graded_at: string | null;
+};
+
+export type Assignment = {
+  id: string;
+  course_id: string;
+  course_title: string;
+  lesson_id: string | null;
+  title: string;
+  description: string;
+  due_at: string | null;
+  max_score: number;
+  allow_late: boolean;
+  is_published: boolean;
+  submission_count: number;
+  published_at: string | null;
+  created_at: string;
+};
+
+export type AdminAssignmentDetail = Assignment & {
+  submissions: AssignmentSubmission[];
+};
+
+export type StudentAssignment = Assignment & {
+  is_overdue: boolean;
+  submission: AssignmentSubmission | null;
+};
+
 export type Material = {
   id: string;
   lesson_id: string;

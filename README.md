@@ -36,8 +36,10 @@ Butun lokal platformani ishga tushirish:
 - Multimedia kutubxonasi: `http://127.0.0.1:3000/admin/materials`
 - Kursga biriktirish: `http://127.0.0.1:3000/admin/enrollments`
 - Testlar boshqaruvi: `http://127.0.0.1:3000/admin/assessments`
+- Uy vazifalari boshqaruvi: `http://127.0.0.1:3000/admin/assignments`
 - Talabaning kurslari: `http://127.0.0.1:3000/my-courses`
 - Talabaning testlari: `http://127.0.0.1:3000/assessments`
+- Talabaning uy vazifalari: `http://127.0.0.1:3000/assignments`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -76,6 +78,14 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - O‘tish bali, vaqt chegarasi va ruxsat etilgan urinishlar soni sozlanadi.
 - Talaba faqat o‘ziga biriktirilgan kursning nashr qilingan testlarini ishlaydi.
 - Natija serverda avtomatik hisoblanadi, takroriy yuborish va begona urinish identifikatorlari bloklanadi.
+
+## Uy vazifalari
+
+- Administrator kurs uchun topshiriq, maksimal ball, muddat va kech yuborish qoidasini belgilaydi.
+- Talaba javob matni va PDF, DOCX, PPTX yoki XLSX hujjatini yuborishi mumkin.
+- Baholanmagan javobni yangilash mumkin; baholangandan keyin javob o‘zgartirilmaydi.
+- Administrator yuborilgan faylni ko‘rib, ball va izoh beradi; natija talaba kabinetida ko‘rinadi.
+- Topshiriq fayllari statik ochilmaydi va faqat ruxsati bor foydalanuvchiga API orqali beriladi.
 
 ## Arxitektura chegarasi
 

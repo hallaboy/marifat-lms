@@ -38,6 +38,14 @@
 - Javob varianti aynan yuborilgan savolga tegishli ekanligi serverda tekshiriladi.
 - Bir urinishni qayta topshirish va boshqa talabaning urinishidan foydalanish bloklanadi.
 
+## Uy vazifalari xavfsizligi
+
+- Topshiriq fayllari kengaytma, fayl imzosi va Office konteyner tuzilmasi bo‘yicha tekshiriladi.
+- Talaba faqat o‘z javob faylini, administrator yoki kurs o‘qituvchisi esa tekshirishi kerak bo‘lgan faylni oladi.
+- Fayllar `assignment-submissions` hududida tasodifiy nom bilan saqlanadi; foydalanuvchi nomi disk yo‘liga aylantirilmaydi.
+- Muddat, kech yuborish va maksimal ball cheklovlari backendda tekshiriladi.
+- Baholangan javobni talaba qayta yubora olmaydi; yuborish va baholash amallari audit jurnaliga yoziladi.
+
 ## Tarmoq
 
 - Backend dastlab faqat `127.0.0.1` manzilida ishlaydi.
