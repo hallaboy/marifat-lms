@@ -58,7 +58,7 @@ export default function AdminPage() {
         <nav>
           <Link href="/admin" className={styles.active}><Gauge weight="fill" />Umumiy ko‘rinish</Link>
           <Link href="/users"><Users />Foydalanuvchilar</Link>
-          <Link href="/courses"><BookOpen />Kurslar</Link>
+          <Link href="/admin/courses"><BookOpen />Kurslar</Link>
         </nav>
         <button onClick={logout}><SignOut />Tizimdan chiqish</button>
       </aside>
@@ -81,8 +81,8 @@ export default function AdminPage() {
               <aside><strong>{stats?.active_sessions ?? 0}</strong><small>Faol sessiya</small></aside>
             </section>
             <section className={styles.nextStep}>
-              <p>KEYINGI MODUL</p><h2>Foydalanuvchilarni boshqarish</h2><span>Talaba va o‘qituvchi yaratish, rollarni tayinlash hamda hisoblarni bloklash shu yerga qo‘shiladi.</span>
-              <Link href="/users">Modulni ko‘rish →</Link>
+              <p>FAOL MODULLAR</p><h2>Kurslar va foydalanuvchilar boshqaruvi</h2><span>Kurs, dars va nashr jarayonini boshqaring yoki talaba hamda o‘qituvchi hisoblarini yarating.</span>
+              <Link href="/admin/courses">Kurslarni boshqarish →</Link>
             </section>
           </>
         )}
