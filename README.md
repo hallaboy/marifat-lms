@@ -63,6 +63,13 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Video va jonli dars havolalari faqat HTTPS orqali qabul qilinadi.
 - Barcha kurs va dars yaratish amallari serverda admin roli va CSRF token bilan tekshiriladi.
 
+## Haqiqiy talaba dashboardi
+
+- Bosh sahifa faqat autentifikatsiyalangan talaba uchun ochiladi; administrator va o‘qituvchi o‘z kabinetiga yo‘naltiriladi.
+- Talaba ismi, kurslar, progress, test natijalari, tugallangan darslar, yaqin vazifalar, taqvim va o‘qilmagan bildirishnomalar API orqali PostgreSQL’dan olinadi.
+- Qidiruv faqat talabaning o‘ziga biriktirilgan kurslarida ishlaydi va kurs kartalari haqiqiy progressni ko‘rsatadi.
+- Soxta foydalanuvchi, kurs, vazifa, statistika va faollik grafiklari olib tashlangan.
+
 ## Multimedia materiallari
 
 - YouTube havolalari `youtube-nocookie.com` embed formatiga normallashtiriladi.
