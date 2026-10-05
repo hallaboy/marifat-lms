@@ -15,6 +15,7 @@
 - Holatni o‘zgartiruvchi so‘rovlar CSRF token va ruxsat etilgan `Origin` bilan tekshiriladi.
 - Besh marta noto‘g‘ri parol kiritilganda hisob vaqtincha bloklanadi.
 - Login, logout va administrator amallari audit jurnaliga yoziladi.
+- Cloudflare’ning haqiqiy mijoz IP sarlavhasi faqat loopback reverse proxy’dan kelgan so‘rovda ishonchli deb olinadi; internet mijozining soxta sarlavhasi audit IP’ini almashtira olmaydi.
 
 ## Fayl yuklash
 
