@@ -44,6 +44,7 @@ Butun lokal platformani ishga tushirish:
 - Bildirishnomalar boshqaruvi: `http://127.0.0.1:3000/admin/notifications`
 - Yordam markazi boshqaruvi: `http://127.0.0.1:3000/admin/support`
 - O‘qituvchi kabineti: `http://127.0.0.1:3000/teacher`
+- O‘qituvchi kontent boshqaruvi: `/teacher/courses/{course_id}/manage`
 - Talabaning kurslari: `http://127.0.0.1:3000/my-courses`
 - Talabaning testlari: `http://127.0.0.1:3000/assessments`
 - Talabaning uy vazifalari: `http://127.0.0.1:3000/assignments`
@@ -79,6 +80,8 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Kabinetda faqat shu o‘qituvchiga biriktirilgan kurslar, talabalar soni, o‘rtacha progress, test natijalari va tekshirilmagan vazifalar ko‘rsatiladi.
 - Kurs sahifasida har bir talabaning dars progressi, test o‘rtachasi va uy vazifalari holati kuzatiladi.
 - O‘qituvchi yuborilgan hujjatni ruxsat bilan yuklab olib, maksimal ball chegarasida baho va izoh qoldiradi.
+- O‘qituvchi o‘z kursiga matnli, video yoki jonli dars qo‘shadi; test yaratib savol va variantlarni kiritadi; uy vazifasi, muddat va maksimal ballni belgilaydi.
+- Test va vazifalar qoralama sifatida yaratiladi va alohida nashr qilingandagina talabaga ko‘rinadi.
 - Ma’lumotlarni kurs egasi bo‘yicha filtrlash frontendga emas, FastAPI’dagi rol va `teacher_id` tekshiruviga tayanadi.
 
 ## Multimedia materiallari

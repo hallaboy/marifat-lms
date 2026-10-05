@@ -74,7 +74,7 @@ export default function TeacherDashboardPage() {
             <h3>{course.title}</h3>
             <div className={styles.courseNumbers}><span><Student /> <b>{course.student_count}</b><small>talaba</small></span><span><BookOpen /> <b>{course.lesson_count}</b><small>dars</small></span><span><ClipboardText /> <b>{course.pending_submissions}</b><small>yangi ish</small></span></div>
             <div className={styles.progressText}><span>O‘rtacha o‘zlashtirish</span><b>{course.average_progress}%</b></div><div className={styles.progress}><i style={{ width: `${course.average_progress}%` }} /></div>
-            <footer><span>{course.completed_students} talaba yakunlagan</span><Link href={`/teacher/courses/${course.course_id}`}>Kursni boshqarish →</Link></footer>
+            <footer><span>{course.completed_students} talaba yakunlagan</span><span className={styles.cardLinks}><Link href={`/teacher/courses/${course.course_id}`}>Natijalar</Link><Link href={`/teacher/courses/${course.course_id}/manage`}>Kontent →</Link></span></footer>
           </article>)}</div>}
         </section>
       </>}

@@ -53,6 +53,8 @@
 - Frontenddagi yo‘naltirish qo‘shimcha qulaylik hisoblanadi; asosiy rol va ma’lumotlarga kirish nazorati har bir API so‘rovida backendda bajariladi.
 - O‘qituvchi analitikasi faqat `teacher` roliga beriladi va barcha kurs, talaba, test hamda topshiriq so‘rovlari serverda `courses.teacher_id` bilan cheklanadi.
 - Boshqa o‘qituvchiga tegishli kurs yoki topshiriq identifikatori yuborilsa, mavjudlik haqida ma’lumot sizib chiqmasligi uchun `404` qaytariladi.
+- O‘qituvchining dars, test, savol va vazifa yaratish yoki nashr qilish amallari CSRF, sessiya roli va kurs egasi bo‘yicha qayta tekshiriladi hamda audit jurnaliga yoziladi.
+- O‘qituvchi kursni boshqa foydalanuvchiga biriktira olmaydi va boshqa o‘qituvchi yaratgan kontentni identifikator orqali boshqara olmaydi.
 
 ## To‘lovlar xavfsizligi
 
