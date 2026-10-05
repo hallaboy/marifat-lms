@@ -36,7 +36,7 @@ Tiklashdan oldin `.sha256` qiymatini `Get-FileHash -Algorithm SHA256` natijasi b
 
 1. `backup-lms.ps1 -IncludeUploads` bilan tasdiqlangan to‘liq backup yarating.
 2. Frontend uchun `npm ci`, `npm run lint`, `npm run build`, `npm audit --omit=dev` bajaring.
-3. Backend uchun Ruff, pytest, pip-audit va `alembic upgrade head` bajaring.
+3. Backend uchun Ruff, Bandit, pytest, pip-audit va `alembic upgrade head` bajaring.
 4. `stop-lms.ps1`, so‘ng `start-lms.ps1` orqali boshqariladigan restart qiling.
 5. Ready/login, rol ruxsatlari, fayl yuklash va logout smoke testlarini bajaring.
 6. Cloudflare orqali HTTPS, WAF, webhook va cache qoidalarini tekshiring.

@@ -56,6 +56,7 @@ npm ci
 npm run lint
 npm run build
 & "D:\LMS-Server\backend\service\.venv\Scripts\ruff.exe" check app migrations tests
+& "D:\LMS-Server\backend\service\.venv\Scripts\bandit.exe" -q -r app
 & "D:\LMS-Server\backend\service\.venv\Scripts\pytest.exe" -q
 & "D:\LMS-Server\backend\service\.venv\Scripts\python.exe" -m alembic upgrade head
 ```

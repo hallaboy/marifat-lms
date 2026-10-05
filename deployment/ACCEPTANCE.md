@@ -28,7 +28,7 @@ Tekshiruv sanasi: 2026-10-05. Ushbu protokol credential talab qilmaydigan lokal 
 ## Avtomatik tekshiruv natijalari
 
 - FastAPI OpenAPI: 108 ta yo‘l va 125 ta operatsiya.
-- Backend: Ruff muvaffaqiyatli, 14 ta pytest testi muvaffaqiyatli.
+- Backend: Ruff va Bandit muvaffaqiyatli, 14 ta pytest testi muvaffaqiyatli.
 - Frontend: ESLint va Next.js production build muvaffaqiyatli; 33 ta route yig‘ildi.
 - Bog‘liqliklar: `npm audit --omit=dev` — 0 ta; `pip-audit` — ma’lum zaiflik topilmadi.
 - PostgreSQL migratsiyasi: `20261005_16 (head)`.
