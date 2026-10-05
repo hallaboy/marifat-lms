@@ -1,0 +1,15 @@
+# Nusxa oling, qiymatlarni almashtiring va faylni D:/LMS-Server/secrets ichida saqlang.
+tunnel: 00000000-0000-0000-0000-000000000000
+credentials-file: D:/LMS-Server/secrets/cloudflared-00000000-0000-0000-0000-000000000000.json
+
+originRequest:
+  connectTimeout: 10s
+  noTLSVerify: false
+
+ingress:
+  - hostname: lms.example.uz
+    path: ^/api/.*
+    service: http://127.0.0.1:8000
+  - hostname: lms.example.uz
+    service: http://127.0.0.1:3000
+  - service: http_status:404

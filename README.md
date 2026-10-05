@@ -191,6 +191,7 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Telegram boti sozlanganda foydalanuvchi 15 daqiqalik bir martalik kod bilan o‘z hisobini bog‘laydi va tegishli e’lonlarni bot orqali oladi.
 - CRM sozlanganda nashr hodisasi HMAC-SHA256 imzosi, vaqt belgisi va yagona delivery identifikatori bilan HTTPS webhookka yuboriladi.
 - Tashqi xabarlar idempotent outboxda saqlanadi; worker uzilishlarda eksponensial kechikish bilan qayta urinadi, administrator esa holat jurnalini ko‘radi.
+- Firebase Cloud Messaging brauzerlarni 2026-yilgi tavsiya etilgan Firebase Installation ID (FID) orqali bog‘laydi; FID faqat autentifikatsiyalangan foydalanuvchiga tegishli yozuv sifatida saqlanadi.
 
 ## Yordam markazi va texnik ko‘mak
 
@@ -207,3 +208,4 @@ Bu repository faqat frontend kodi va xavfsiz hujjatlarni saqlaydi. Backend kodi,
 Production frontend statik GitHub Pages emas, qat’iy nonce asosidagi CSP’ni qo‘llaydigan Next.js runtime orqali chiqariladi. Tashqi trafik Cloudflare HTTPS/WAF orqali keladi, backend va PostgreSQL esa internetga bevosita ochilmaydi.
 
 Xavfsizlik talablari [SECURITY.md](./SECURITY.md) faylida yozilgan.
+Cloudflare Tunnel, WAF va production release tartibi [deployment/PRODUCTION.md](./deployment/PRODUCTION.md) faylida berilgan.

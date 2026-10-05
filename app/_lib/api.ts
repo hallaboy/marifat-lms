@@ -311,11 +311,18 @@ export type IntegrationAdmin = {
   telegram_enabled: boolean;
   telegram_bot_username: string | null;
   crm_enabled: boolean;
+  firebase_enabled: boolean;
   linked_telegram_accounts: number;
+  firebase_installations: number;
   pending_deliveries: number;
   failed_deliveries: number;
   delivered_deliveries: number;
   dead_deliveries: number;
+};
+
+export type FirebaseIntegration = {
+  enabled: boolean;
+  installation_count: number;
 };
 
 export type IntegrationDelivery = {
