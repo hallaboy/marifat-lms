@@ -280,6 +280,20 @@ export type StudentAttendance = {
   records: AttendanceRecord[];
 };
 
+export type Certificate = {
+  id: string;
+  verification_code: string;
+  student_id: string;
+  student_name: string;
+  course_id: string;
+  course_title: string;
+  issued_at: string;
+  completed_at: string;
+  revoked_at: string | null;
+  revoke_reason: string | null;
+  is_valid: boolean;
+};
+
 export type StudentAssignment = Assignment & {
   is_overdue: boolean;
   submission: AssignmentSubmission | null;

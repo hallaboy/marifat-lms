@@ -56,6 +56,8 @@ Butun lokal platformani ishga tushirish:
 - Bildirishnomalar markazi: `http://127.0.0.1:3000/notifications`
 - Texnik yordam markazi: `http://127.0.0.1:3000/help`
 - Talabaning davomati: `http://127.0.0.1:3000/attendance`
+- Talabaning sertifikatlari: `http://127.0.0.1:3000/certificates`
+- Sertifikatni tekshirish: `/certificates/{verification_code}`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -155,6 +157,14 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - `Qatnashdi`, `Qatnashmadi`, `Kechikdi` va `Sababli` holatlari hamda ixtiyoriy izoh saqlanadi.
 - Bir dars va talaba uchun bitta davomat yozuvi mavjud; qayta saqlash yangi dublikat yaratmay, mavjud yozuvni yangilaydi.
 - Talaba faqat o‘z davomat tarixini, qatnashgan/kechikkan/qatnashmagan sonini va umumiy foizini ko‘radi.
+
+## Kurs sertifikatlari
+
+- Barcha nashr qilingan darslarni yakunlagan talaba uchun yagona sertifikat avtomatik beriladi.
+- Avval yakunlangan kurslar uchun talaba sertifikatlar sahifasida xavfsiz sinxronlashni ishga tushirishi mumkin.
+- Har bir sertifikat taxmin qilish qiyin bo‘lgan 128-bit tekshiruv kodi bilan ochiq verifikatsiya sahifasiga ega.
+- Sertifikatni brauzerdan chop etish yoki PDF sifatida saqlash mumkin.
+- Bekor qilingan sertifikat tekshiruv sahifasida sabab va holat bilan ko‘rsatiladi; u amaldagi sertifikat hisoblanmaydi.
 
 ## Elektron resurslar kutubxonasi
 

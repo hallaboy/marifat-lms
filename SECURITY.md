@@ -80,6 +80,14 @@
 - O‘qituvchi boshqa kurs identifikatorini yuborsa, kurs mavjudligi oshkor qilinmasdan `404` qaytariladi.
 - Talaba API’si sessiyadagi foydalanuvchi identifikatori bo‘yicha faqat uning o‘z davomat yozuvlarini qaytaradi.
 
+## Sertifikat xavfsizligi
+
+- Sertifikat faqat serverdagi `completed` enrollment uchun va har bir enrollmentga bir marta yaratiladi.
+- Ochiq tekshiruv identifikatori `MRF-` prefiksi va 128-bit kriptografik tasodifiy qiymatdan iborat; ketma-ket baza identifikatorlari oshkor qilinmaydi.
+- Talaba sertifikatlar ro‘yxatini faqat o‘z sessiyasi orqali oladi; sinxronlash CSRF va rol tekshiruvi bilan himoyalangan.
+- Bekor qilish faqat administratorga ruxsat etiladi, sabab va vaqt audit jurnalida saqlanadi.
+- Ochiq tekshiruv javobi faqat sertifikat egasi nomi, kurs, berilgan/yakunlangan sana va amal qilish holatini ko‘rsatadi; email va boshqa profil ma’lumotlari berilmaydi.
+
 ## Resurslar kutubxonasi xavfsizligi
 
 - Resurs guruhlari va materiallarini yaratish, nashr qilish yoki o‘chirish faqat administrator va CSRF himoyasi bilan bajariladi.

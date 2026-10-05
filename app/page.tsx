@@ -134,6 +134,7 @@ export default function Dashboard() {
     { label: "Taqvim", icon: CalendarBlank, href: "/calendar" },
     { label: "Natijalar", icon: ChartBar, href: "/results" },
     { label: "Davomat", icon: CalendarCheck, href: "/attendance" },
+    { label: "Sertifikatlar", icon: Medal, href: "/certificates" },
     { label: "Resurslar", icon: Books, href: "/resources" },
   ];
 
