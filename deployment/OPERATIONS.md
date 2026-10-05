@@ -14,11 +14,12 @@ PostgreSQL, FastAPI, integratsiya workeri va Next.js jarayonlari faqat kutilgan 
 
 ```powershell
 & "D:\LMS-Server\config\backup-lms.ps1"
+& "D:\LMS-Server\config\backup-lms.ps1" -IncludeUploads
 ```
 
-Skript PostgreSQL custom-format nusxasini yaratadi, `pg_restore --list` bilan tekshiradi va SHA-256 nazorat summasini yon faylga yozadi. Avtomatik nusxalarga saqlash muddati berish uchun `-RetentionDays 30` ishlatiladi; 7 kundan qisqa qiymat qabul qilinmaydi. Standart qiymat `0`, ya’ni skript eski nusxalarni o‘zi o‘chirmaydi.
+Skript PostgreSQL custom-format nusxasini yaratadi, `pg_restore --list` bilan tekshiradi va SHA-256 nazorat summasini yon faylga yozadi. `-IncludeUploads` qo‘shilsa, `uploads` katalogi alohida `tar.gz` arxiviga olinadi, arxiv tarkibi o‘qib tekshiriladi va mustaqil SHA-256 fayli yaratiladi. Avtomatik nusxalarga saqlash muddati berish uchun `-RetentionDays 30` ishlatiladi; 7 kundan qisqa qiymat qabul qilinmaydi. Standart qiymat `0`, ya’ni skript eski nusxalarni o‘zi o‘chirmaydi.
 
-Har kuni lokal nusxa, haftasiga kamida bir marta esa shifrlangan tashqi/offsite nusxa saqlang. Ma’lumotlar bazasi bilan birga `uploads` katalogi ham alohida shifrlangan arxivga olinishi kerak. Secret fayllarni oddiy backup yoki bulut papkasiga nusxalamang.
+Har kuni lokal ma’lumotlar bazasi nusxasi, haftasiga kamida bir marta `-IncludeUploads` bilan to‘liq nusxa yarating. Keyin bazani, upload arxivini va ikkala checksum faylini shifrlangan tashqi/offsite saqlashga ko‘chiring. Secret fayllarni oddiy backup yoki bulut papkasiga nusxalamang.
 
 ## Tiklash sinovi
 
@@ -33,7 +34,7 @@ Tiklashdan oldin `.sha256` qiymatini `Get-FileHash -Algorithm SHA256` natijasi b
 
 ## Release tartibi
 
-1. Tasdiqlangan backup yarating.
+1. `backup-lms.ps1 -IncludeUploads` bilan tasdiqlangan to‘liq backup yarating.
 2. Frontend uchun `npm ci`, `npm run lint`, `npm run build`, `npm audit --omit=dev` bajaring.
 3. Backend uchun Ruff, pytest, pip-audit va `alembic upgrade head` bajaring.
 4. `stop-lms.ps1`, so‘ng `start-lms.ps1` orqali boshqariladigan restart qiling.

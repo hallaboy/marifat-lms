@@ -51,7 +51,7 @@ Telegram, CRM, Click, Payme va Firebase service-account kalitlari Git repository
 ## 4. Release gate
 
 ```powershell
-& "D:\LMS-Server\config\backup-lms.ps1"
+& "D:\LMS-Server\config\backup-lms.ps1" -IncludeUploads
 npm ci
 npm run lint
 npm run build
