@@ -5,6 +5,7 @@
 - `.env`, token, parol, shaxsiy kalit va xizmat hisobi fayllari Git'ga kiritilmaydi.
 - Faqat `.env.example` ichida xavfsiz namuna qiymatlar saqlanadi.
 - Production sirlari Cloudflare yoki deployment platformasining secret storage xizmatida turadi.
+- Backend production rejimida Secure cookie, HTTPS public/origin manzillari va aniq trusted hostlar bo‘lmasa ishga tushishni rad etadi.
 
 ## Autentifikatsiya
 
@@ -118,6 +119,7 @@
 - Administrator jurnalida Telegram chat identifikatorining faqat oxirgi to‘rtta belgisi ko‘rinadi; token, payload va to‘liq manzil API javobiga kiritilmaydi.
 - Firebase service-account JSON faqat backend secret storage’da turadi. Brauzer public config va VAPID public kaliti maxfiy hisoblanmaydi, lekin loyiha/domen cheklovlari bilan ishlatiladi.
 - Firebase Installation ID faqat sessiya va CSRF orqali foydalanuvchiga biriktiriladi; boshqa hisobdagi FID’ni egallash `409` bilan bloklanadi va admin jurnalida FID maskalanadi.
+- Bekor qilingan Firebase FID navbatda qayta ishlatilmaydi: worker uni `dead` holatiga o‘tkazadi va foydalanuvchi qurilmalari ro‘yxatidan olib tashlaydi.
 
 ## Texnik yordam xavfsizligi
 
