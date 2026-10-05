@@ -4,17 +4,17 @@
 
 Portable `cloudflared 2026.9.1` binarysi `D:\LMS-Server\cloudflared\cloudflared.exe` manziliga rasmiy SHA-256 tekshiruvi bilan o‘rnatilgan. Windows versiyasi avtomatik yangilanmaydi; yangi reliz o‘rnatilganda rasmiy checksumni qayta tekshiring.
 
-1. Cloudflare Zero Trust’da nomlangan tunnel yarating.
-2. Tunnel credential JSON faylini faqat `D:\LMS-Server\secrets` ichida saqlang.
-3. `cloudflare-tunnel.example.yml` nusxasida tunnel UUID, credential yo‘li va haqiqiy domenni kiriting.
-4. Ingress tartibini saqlang: avval `^/api/.*` FastAPI’ga, keyin qolgan trafik Next.js’ga, oxirida majburiy `http_status:404`.
+1. Remote-managed `sitlearning-production` tunnel Cloudflare’da yaratilgan.
+2. Tunnel tokeni faqat `D:\LMS-Server\secrets\cloudflare-tunnel.token` ichida cheklangan ACL bilan saqlanadi.
+3. `deployment/cloudflare-remote-tunnel.yml` faqat token fayliga yo‘lni ko‘rsatadi; tokenning o‘zi repositoryga kiritilmaydi.
+4. `sitlearning.uz` va `www.sitlearning.uz` public hostname’lari `127.0.0.1:3000` ga uzatiladi; Next.js bir xil origin `/api/*` so‘rovlarini FastAPI’ga yo‘naltiradi.
 5. PostgreSQL `5432` portini tunnel, router yoki firewall orqali internetga ochmang.
 
-Haqiqiy konfiguratsiya tayyor bo‘lgach versiya va ingressni tekshiring:
+Versiya, konfiguratsiya va tunnel jarayonini tekshiring:
 
 ```powershell
 & "D:\LMS-Server\cloudflared\cloudflared.exe" --version
-& "D:\LMS-Server\cloudflared\cloudflared.exe" tunnel --config "D:\LMS-Server\secrets\cloudflare-tunnel.yml" ingress validate
+Get-CimInstance Win32_Process | Where-Object { $_.Name -eq "cloudflared.exe" -and $_.CommandLine -like "*cloudflare-tunnel.yml*" }
 ```
 
 ## 2. Production environment

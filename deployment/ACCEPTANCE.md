@@ -23,7 +23,7 @@ Tekshiruv sanasi: 2026-10-05. Ushbu protokol credential talab qilmaydigan lokal 
 | Xavfsizlik | Argon2id, HttpOnly sessiya, CSRF, RBAC, audit, CSP, upload tekshiruvi | Ruff, pytest, npm audit, pip-audit va ACL tekshiruvi | Qabul qilindi |
 | Lokal server va backup | D diskdagi PostgreSQL/backend, boshqaruv, baza, uploads va secretsiz application kodi uchun SHA-256 backup skriptlari | `status-lms.ps1`, `backup-lms.ps1 -IncludeUploads -IncludeApplication`, baza hamda arxiv tarkibi tekshiruvi | Qabul qilindi |
 | GitHub frontend | Faqat frontend kodi va xavfsiz hujjatlar | Lokal `HEAD` va `origin/main` tengligi | Qabul qilindi |
-| Public production | `sitlearning.uz` uchun Cloudflare runtime, ikki hostname ingressi va xavfsiz DNS ko‘chirish rejasi tayyor | `cloudflared 2026.9.1`, validatsiyalangan ingress; Cloudflare/Eskiz login va tunnel credentiali kutilmoqda | Hisoblarga kirish kutilmoqda |
+| Public production | `sitlearning.uz` va `www.sitlearning.uz` Cloudflare Tunnel orqali lokal Next.js/FastAPI xizmatlariga ulandi; mail DNS yozuvlari saqlandi | Healthy tunnel, proxied CNAME yozuvlari, Eskiz’da Cloudflare NS qiymatlari saqlandi; public aktivatsiya DNS tarqalishini kutmoqda | DNS tarqalmoqda |
 
 ## Avtomatik tekshiruv natijalari
 
@@ -34,5 +34,5 @@ Tekshiruv sanasi: 2026-10-05. Ushbu protokol credential talab qilmaydigan lokal 
 - PostgreSQL migratsiyasi: `20261005_16 (head)`.
 - Runtime: PostgreSQL, FastAPI, ichki integratsiya workeri va Next.js faol.
 
-Tashqi provayderlarning haqiqiy kalitlari test yoki repositoryga yozilmaydi. Ular taqdim etilgach [PRODUCTION.md](./PRODUCTION.md) bo‘yicha Cloudflare orqali yakuniy public smoke test o‘tkaziladi.
+Tashqi provayderlarning haqiqiy kalitlari test yoki repositoryga yozilmaydi. Cloudflare tunnel tokeni faqat `D:\LMS-Server\secrets` ichida cheklangan ACL bilan saqlanadi. Nameserver tarqalishi tugagach [PRODUCTION.md](./PRODUCTION.md) bo‘yicha yakuniy public smoke test o‘tkaziladi.
 

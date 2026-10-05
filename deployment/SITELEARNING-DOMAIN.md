@@ -1,6 +1,6 @@
 # sitlearning.uz domenini ishga tushirish
 
-Tekshiruv sanasi: 2026-10-05. Domenning amaldagi authoritative nameserverlari `dns1.eskiz.uz` va `dns2.eskiz.uz`.
+Tekshiruv sanasi: 2026-10-05. Eskiz registratorida nameserverlar `ashton.ns.cloudflare.com` va `aurora.ns.cloudflare.com` qiymatlariga almashtirildi; global DNS keshlari yangilanishi kutilmoqda.
 
 ## Maqsadli arxitektura
 
@@ -18,22 +18,21 @@ Quyidagi qiymatlar 2026-10-05 kuni Eskiz authoritative DNS’dan o‘qilgan. Clo
 |---|---|---|---|
 | A | `mail` | `45.138.159.2` | DNS only |
 | A | `webmail` | `45.138.159.2` | DNS only |
-| CNAME | `ftp` | `sitlearning.uz` | DNS only; FTP ishlatilsa keyinchalik alohida origin yozuvi tavsiya etiladi |
+| A | `ftp` | `45.138.159.2` | DNS only; ildiz domen tunnelga o‘tganda FTP uzilmasligi uchun mustaqil yozuv |
 | MX | `@` | `10 mail.sitlearning.uz` | DNS only |
 | TXT | `@` | `v=spf1 +a +mx +a:panel1.eskiz.uz -all` | DNS only |
 | TXT | `_dmarc` | `v=DMARC1; p=quarantine; adkim=s; aspf=s` | DNS only |
 
-Amaldagi `@ A 45.138.159.2` va `www CNAME sitlearning.uz` yozuvlari eski hostingga xizmat qiladi. Tunnel DNS route’lari tayyor bo‘lmaguncha ularni almashtirmang.
+Eski `@ A 45.138.159.2` va `www CNAME sitlearning.uz` yozuvlari Cloudflare’da tunnel ID manziliga proxied CNAME yozuvlari bilan almashtirildi.
 
 ## Xavfsiz ko‘chirish tartibi
 
-1. Cloudflare hisobiga `sitlearning.uz` zone’ini qo‘shing.
-2. Yuqoridagi mail/SPF/DMARC yozuvlarini Cloudflare importidan keyin bandma-band tekshiring.
-3. `sitlearning-production` nomli tunnel yarating va credential faylini faqat `D:\\LMS-Server\\secrets` ichida ACL bilan saqlang.
-4. `deployment/cloudflare-tunnel.example.yml` asosida haqiqiy `cloudflare-tunnel.yml` yarating va `ingress validate` bajaring.
-5. Cloudflare’da `@` va `www` hostlarini tunnel UUID’ining `.cfargotunnel.com` manziliga proxied CNAME sifatida yo‘naltiring.
-6. Shundan keyingina Eskiz panelida nameserverlarni Cloudflare bergan ikkita NS qiymatiga almashtiring.
-7. NS tarqalishi tugagach HTTPS, login/logout, fayl yuklash, material ko‘rish va `/api/v1/ready` smoke testlarini bajaring.
-8. `/api/*` va autentifikatsiyalangan sahifalar uchun cache bypass, login/API rate limit va WAF qoidalarini tekshiring.
+1. Cloudflare zone, `sitlearning-production` tunnel va `@` hamda `www` public hostname’lari yaratildi.
+2. Tunnel tokeni `D:\\LMS-Server\\secrets\\cloudflare-tunnel.token` ichida cheklangan ACL bilan saqlandi; repositoryda faqat token fayliga yo‘l ko‘rsatilgan konfiguratsiya bor.
+3. Mail, webmail, MX, SPF, DMARC va xizmat yozuvlari Cloudflare DNS’da tekshirildi; `ftp` amaldagi IP’ga mustaqil DNS-only A yozuvi qilindi.
+4. `@` va `www` tunnel UUID’ining `.cfargotunnel.com` manziliga proxied CNAME sifatida yo‘naltirildi.
+5. Eskiz panelida nameserverlar Cloudflare bergan ikki NS qiymatiga almashtirildi va registrator muvaffaqiyat xabarini qaytardi.
+6. NS tarqalishi tugagach HTTPS, login/logout, fayl yuklash, material ko‘rish va `/api/v1/ready` smoke testlarini bajaring.
+7. `/api/*` va autentifikatsiyalangan sahifalar uchun cache bypass, login/API rate limit va WAF qoidalarini tekshiring.
 
 Nameserver almashtirish mail oqimiga ta’sir qilishi mumkin. MX, `mail`, SPF va DMARC Cloudflare’da tasdiqlanmasdan Eskiz NS yozuvlarini o‘zgartirish taqiqlanadi.
