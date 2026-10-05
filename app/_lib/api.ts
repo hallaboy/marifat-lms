@@ -331,6 +331,12 @@ export type IntegrationDelivery = {
   created_at: string;
 };
 
+export type PaymentProviders = {
+  click: boolean;
+  payme: boolean;
+  uzum: boolean;
+};
+
 export type StudentAssignment = Assignment & {
   is_overdue: boolean;
   submission: AssignmentSubmission | null;

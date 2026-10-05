@@ -143,7 +143,10 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Pullik kursga talaba biriktirilganda uning nomiga `pending` holatidagi hisob avtomatik yaratiladi.
 - Administrator qo‘lda hisob yaratishi, to‘lov usuli va provayder operatsiya raqami bilan to‘lovni tasdiqlashi, hisobni bekor qilishi yoki to‘lovni qaytarilgan deb belgilashi mumkin.
 - Talaba faqat o‘z hisoblari va to‘lov tarixini ko‘radi.
-- Click, Payme va Uzum usullari ma’lumot modelida tayyor, lekin provayder webhooklari ulanmaguncha to‘lovlar administrator tomonidan tasdiqlanadi.
+- Click Shop API uchun MD5 protokol imzosi, `prepare/complete` idempotent oqimi va serverdagi summa/invoice tekshiruvi mavjud.
+- Payme Merchant API uchun HTTP Basic autentifikatsiya, JSON-RPC metodlari, tiyin summasi, 12 soatlik provider oqimi va takroriy callbacklarda barqaror javob qo‘llanadi.
+- Talaba faqat o‘zining `pending` hisobiga CSRF bilan checkout havolasi yaratadi; merchant kalitlari sozlangandagina Click/Payme tugmalari ko‘rinadi.
+- Uzum adapteri rasmiy hamkorlik turi va production rekvizitlari olingach yoqiladi; provayder shartnomasisiz protokol taxmin qilinmaydi.
 
 ## Taqvim va o‘quv jadvali
 

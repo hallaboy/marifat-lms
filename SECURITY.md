@@ -65,6 +65,10 @@
 - Tasdiqlangan to‘lov oddiy `pending` yoki `cancelled` holatiga qaytarilmaydi; faqat auditlanadigan `refunded` jarayoni mavjud.
 - Provayder operatsiya raqami takrorlanmaydi va serverda ruxsat etilgan belgilar bo‘yicha tekshiriladi.
 - Karta rekvizitlari, CVV yoki to‘liq karta raqami platforma bazasida saqlanmaydi.
+- Click callbacklari xizmat identifikatori, action va protokol talab qilgan imzo bilan doimiy vaqtga yaqin taqqoslanadi; invoice identifikatori hamda summa serverdagi yozuvga aynan mos bo‘lishi shart.
+- Payme callbacklari `Paycom` Basic credentiali bilan tekshiriladi; invoice summasi tiyinlarda serverda qayta hisoblanadi va JSON-RPC tranzaksiyalari doimiy bazada saqlanadi.
+- Provayder tranzaksiyasi `(provider, transaction_id)` yagona kalitiga ega. Takroriy `create`, `perform`, `complete` va `cancel` chaqiruvlari pul holatini ikkinchi marta o‘zgartirmaydi.
+- Checkout havolasini faqat hisob egasi, `pending` holatida va CSRF token bilan oladi; merchant secretlari URL yoki frontend javobiga kiritilmaydi.
 
 ## Taqvim xavfsizligi
 
