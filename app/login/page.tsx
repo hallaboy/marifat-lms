@@ -80,7 +80,6 @@ export default function LoginPage() {
               autoComplete="username"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              placeholder="admin@sitlearning.uz"
               required
             />
           </label>
