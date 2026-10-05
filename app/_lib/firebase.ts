@@ -1,5 +1,7 @@
 import { getApp, getApps, initializeApp } from "@firebase/app";
-import { getMessaging, isSupported, onRegistered, register } from "@firebase/messaging";
+import { getMessaging, isSupported, onRegistered, register, unregister } from "@firebase/messaging";
+
+const installationStorageKey = "marifat_firebase_installation_id";
 
 const config = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -26,6 +28,7 @@ export async function registerFirebaseInstallation(): Promise<string> {
     const unsubscribe = onRegistered(messaging, (fid) => {
       window.clearTimeout(timeout);
       unsubscribe();
+      window.localStorage.setItem(installationStorageKey, fid);
       resolve(fid);
     });
     register(messaging, { vapidKey: process.env.NEXT_PUBLIC_FIREBASE_VAPID_KEY, serviceWorkerRegistration }).catch((cause) => {
@@ -34,4 +37,16 @@ export async function registerFirebaseInstallation(): Promise<string> {
       reject(cause);
     });
   });
+}
+
+export function getCurrentFirebaseInstallationId(): string | null {
+  if (typeof window === "undefined") return null;
+  return window.localStorage.getItem(installationStorageKey);
+}
+
+export async function unregisterFirebaseInstallation(): Promise<void> {
+  if (!firebaseClientConfigured || !(await isSupported())) return;
+  const app = getApps().length ? getApp() : initializeApp(config);
+  await unregister(getMessaging(app));
+  window.localStorage.removeItem(installationStorageKey);
 }
