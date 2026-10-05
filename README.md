@@ -209,3 +209,4 @@ Production frontend statik GitHub Pages emas, qat’iy nonce asosidagi CSP’ni 
 
 Xavfsizlik talablari [SECURITY.md](./SECURITY.md) faylida yozilgan.
 Cloudflare Tunnel, WAF va production release tartibi [deployment/PRODUCTION.md](./deployment/PRODUCTION.md) faylida berilgan.
+Kundalik monitoring, tekshiriladigan backup va hodisaga javob tartibi [deployment/OPERATIONS.md](./deployment/OPERATIONS.md) faylida berilgan.

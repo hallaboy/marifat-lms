@@ -11,7 +11,8 @@ export function proxy(request: NextRequest) {
     style-src 'self' 'nonce-${nonce}'${isDevelopment ? " 'unsafe-inline'" : ""};
     img-src 'self' blob: data:;
     font-src 'self';
-    connect-src 'self' ${apiOrigin};
+    connect-src 'self' ${apiOrigin} https://firebaseinstallations.googleapis.com https://fcmregistrations.googleapis.com https://fcm.googleapis.com;
+    worker-src 'self';
     media-src 'self' blob: ${apiOrigin} https:;
     frame-src 'self' https://www.youtube-nocookie.com;
     object-src 'none';

@@ -41,6 +41,7 @@ Telegram, CRM, Click, Payme va Firebase service-account kalitlari Git repository
 ## 4. Release gate
 
 ```powershell
+& "D:\LMS-Server\config\backup-lms.ps1"
 npm ci
 npm run lint
 npm run build
@@ -50,3 +51,5 @@ npm run build
 ```
 
 Release oldidan PostgreSQL custom-format backup yarating, `/api/v1/ready` va frontend `/login` uchun 200 javobni tekshiring, keyin Cloudflare orqali login, upload, webhook va logout smoke testlarini bajaring.
+
+Kundalik monitoring, backup, tiklash sinovi va hodisaga javob tartibi [OPERATIONS.md](./OPERATIONS.md) faylida berilgan.
