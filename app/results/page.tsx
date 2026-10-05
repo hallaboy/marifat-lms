@@ -42,7 +42,7 @@ export default function ResultsPage() {
 
   return (
     <main className={styles.shell}>
-      <header className={styles.topbar}><Link href="/my-courses" className={styles.brand}><BookOpen weight="fill" />SiteLearning</Link><span>{user?.full_name}</span></header>
+      <header className={styles.topbar}><Link href="/my-courses" className={styles.brand}><BookOpen weight="fill" />sitlearning</Link><span>{user?.full_name}</span></header>
       <section className={styles.hero}><Link href="/my-courses"><ArrowLeft /> Kurslarimga qaytish</Link><p>SHAXSIY NATIJALAR</p><h1>O‘zlashtirish ko‘rsatkichlari</h1><span>Kurslar, testlar va uy vazifalaridagi natijalaringiz bir joyda.</span><Trophy weight="duotone" /></section>
 
       {loading && <section className={styles.state}>Natijalar yuklanmoqda…</section>}

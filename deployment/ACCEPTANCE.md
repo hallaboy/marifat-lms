@@ -1,4 +1,4 @@
-# SiteLearning LMS qabul protokoli
+# sitlearning LMS qabul protokoli
 
 Tekshiruv sanasi: 2026-10-05. Ushbu protokol credential talab qilmaydigan lokal platforma holatini qayd etadi.
 

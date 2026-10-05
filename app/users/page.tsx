@@ -92,7 +92,7 @@ export default function UsersPage() {
     <main className={styles.shell}>
       <header>
         <Link href="/admin" className={styles.back}><ArrowLeft /> Admin panel</Link>
-        <Link href="/" className={styles.brand}><BookOpen weight="fill" />SiteLearning</Link>
+        <Link href="/" className={styles.brand}><BookOpen weight="fill" />sitlearning</Link>
       </header>
       <section className={styles.content}>
         <div className={styles.titleRow}>

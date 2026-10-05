@@ -100,7 +100,7 @@ export default function AdminPaymentsPage() {
 
   return (
     <main className={styles.shell}>
-      <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />SiteLearning</span></header>
+      <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />sitlearning</span></header>
       <section className={styles.content}>
         <div className={styles.heading}><div><p>MOLIYAVIY HISOB</p><h1>To‘lovlar boshqaruvi</h1><span>Hisoblar, tushumlar va to‘lov holatlarini nazorat qiling.</span></div><button onClick={() => setShowInvoiceForm((value) => !value)}><Receipt /> Yangi hisob</button></div>
         {error && <div className={styles.error}><WarningCircle />{error}</div>}

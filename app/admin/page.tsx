@@ -54,7 +54,7 @@ export default function AdminPage() {
   return (
     <main className={styles.shell}>
       <aside className={styles.sidebar}>
-        <Link href="/" className={styles.brand}><span><BookOpen weight="fill" /></span>SiteLearning</Link>
+        <Link href="/" className={styles.brand}><span><BookOpen weight="fill" /></span>sitlearning</Link>
         <nav>
           <Link href="/admin" className={styles.active}><Gauge weight="fill" />Umumiy ko‘rinish</Link>
           <Link href="/users"><Users />Foydalanuvchilar</Link>

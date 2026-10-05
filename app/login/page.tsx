@@ -58,13 +58,13 @@ export default function LoginPage() {
   return (
     <main className={styles.shell}>
       <section className={styles.brandPanel}>
-        <Link href="/" className={styles.brand}><span><BookOpen weight="fill" /></span>SiteLearning</Link>
+        <Link href="/" className={styles.brand}><span><BookOpen weight="fill" /></span>sitlearning</Link>
         <div>
           <p className={styles.eyebrow}>XAVFSIZ BOSHQARUV</p>
           <h1>Ta&apos;lim jarayonini bir joydan boshqaring.</h1>
           <p>Kurslar, o‘qituvchilar, talabalar va natijalar uchun yagona LMS muhiti.</p>
         </div>
-        <small>SiteLearning LMS • Himoyalangan sessiya</small>
+        <small>sitlearning LMS • Himoyalangan sessiya</small>
       </section>
 
       <section className={styles.formPanel}>

@@ -58,7 +58,7 @@ export default function StudentPaymentsPage() {
   }
 
   return <main className={styles.shell}>
-    <header><Link href="/" className={styles.brand}><BookOpen weight="fill" />SiteLearning</Link><span>{user?.full_name}</span></header>
+    <header><Link href="/" className={styles.brand}><BookOpen weight="fill" />sitlearning</Link><span>{user?.full_name}</span></header>
     <section className={styles.hero}><Link href="/my-courses"><ArrowLeft /> Kurslarimga qaytish</Link><p>MOLIYAVIY KABINET</p><h1>Mening to‘lovlarim</h1><span>Kurslar bo‘yicha hisob va to‘lov tarixingiz.</span><CreditCard weight="duotone" /></section>
     <section className={styles.content}>
       {loading && <div className={styles.state}>To‘lovlar yuklanmoqda…</div>}

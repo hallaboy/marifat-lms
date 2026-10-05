@@ -4,7 +4,7 @@ self.addEventListener("push", (event) => {
   try { payload = event.data.json(); } catch { return; }
   const notification = payload.notification || {};
   const data = payload.data || {};
-  event.waitUntil(self.registration.showNotification(notification.title || "SiteLearning LMS", {
+  event.waitUntil(self.registration.showNotification(notification.title || "sitlearning LMS", {
     body: notification.body || "Yangi bildirishnoma",
     data: { action_url: typeof data.action_url === "string" && data.action_url.startsWith("/") ? data.action_url : "/notifications" },
   }));

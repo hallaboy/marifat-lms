@@ -49,7 +49,7 @@ export default function TeacherDashboardPage() {
   return (
     <main className={styles.shell}>
       <header className={styles.topbar}>
-        <Link href="/teacher" className={styles.brand}><BookOpen weight="fill" />SiteLearning</Link>
+        <Link href="/teacher" className={styles.brand}><BookOpen weight="fill" />sitlearning</Link>
         <nav><Link href="/notifications"><Bell /> Xabarlar</Link><Link href="/resources"><Books /> Resurslar</Link><Link href="/integrations"><PlugsConnected /> Telegram</Link><Link href="/help"><Lifebuoy /> Yordam</Link></nav>
         <div className={styles.profile}><span><small>O‘qituvchi</small><b>{user?.full_name}</b></span><button onClick={logout}><SignOut /> Chiqish</button></div>
       </header>

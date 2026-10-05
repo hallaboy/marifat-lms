@@ -1,4 +1,4 @@
-# SiteLearning LMS
+# sitlearning LMS
 
 O‘zbek tilidagi zamonaviy LMS platformasi. Haqiqiy FastAPI autentifikatsiyasi, rolga asoslangan ruxsatlar, Super Admin paneli, foydalanuvchilar, kurslar va darslar boshqaruvi ishlaydi.
 

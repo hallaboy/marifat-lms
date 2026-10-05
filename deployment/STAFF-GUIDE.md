@@ -1,4 +1,4 @@
-# SiteLearning LMS xodimlar qo‘llanmasi
+# sitlearning LMS xodimlar qo‘llanmasi
 
 Ushbu qo‘llanma administrator va o‘qituvchilarga platformadagi kundalik ishlarni xavfsiz bajarish uchun mo‘ljallangan.
 

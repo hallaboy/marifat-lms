@@ -4,9 +4,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sitlearning.uz"),
-  title: "SiteLearning — Zamonaviy ta'lim platformasi",
-  description: "SiteLearning.uz — kurslar, darslar va natijalarni bir joyda boshqarish platformasi.",
-  applicationName: "SiteLearning",
+  title: "sitlearning — Zamonaviy ta'lim platformasi",
+  description: "sitlearning.uz — kurslar, darslar va natijalarni bir joyda boshqarish platformasi.",
+  applicationName: "sitlearning",
 };
 
 export default async function RootLayout({

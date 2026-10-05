@@ -56,7 +56,7 @@ export default function AssignmentDetailPage() {
 
   return (
     <main className={styles.shell}>
-      <header><Link href="/assignments"><ArrowLeft /> Uy vazifalari</Link><span><ClipboardText weight="fill" /> SiteLearning</span></header>
+      <header><Link href="/assignments"><ArrowLeft /> Uy vazifalari</Link><span><ClipboardText weight="fill" /> sitlearning</span></header>
       <section className={styles.hero}><p>{assignment.course_title}</p><h1>{assignment.title}</h1><div>{assignment.description}</div><section><span><Clock /> {assignment.due_at ? new Date(assignment.due_at).toLocaleString("uz-UZ") : "Muddat belgilanmagan"}</span><span>{assignment.max_score} ball</span></section></section>
       <section className={styles.workspace}>
         {assignment.submission && <aside className={`${styles.submissionState} ${assignment.submission.status === "graded" ? styles.graded : ""}`}>{assignment.submission.status === "graded" ? <CheckCircle weight="duotone" /> : <PaperPlaneTilt weight="duotone" />}<div><small>{assignment.submission.status === "graded" ? "BAHOLANGAN" : "YUBORILGAN"}</small><h2>{assignment.submission.status === "graded" ? `${assignment.submission.score} / ${assignment.max_score} ball` : "O‘qituvchi tekshirishi kutilmoqda"}</h2>{assignment.submission.feedback && <p>{assignment.submission.feedback}</p>}{assignment.submission.file_url && <a href={fileUrl(assignment.submission.file_url)} target="_blank" rel="noopener noreferrer"><FileArrowDown /> {assignment.submission.original_filename}</a>}</div></aside>}
