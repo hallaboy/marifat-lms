@@ -17,6 +17,7 @@ ENVIRONMENT=production
 ALLOWED_ORIGINS=["https://lms.example.uz"]
 TRUSTED_HOSTS=["lms.example.uz","127.0.0.1"]
 COOKIE_SECURE=true
+INTEGRATION_WORKER_ENABLED=true
 PUBLIC_APP_URL=https://lms.example.uz
 ```
 
