@@ -21,7 +21,7 @@ Tekshiruv sanasi: 2026-10-05. Ushbu protokol credential talab qilmaydigan lokal 
 | Texnik qo‘llab-quvvatlash | FAQ, ticket, yozishmalar va operatsion qo‘llanma | `/help`, `/admin/support`, `OPERATIONS.md` | Qabul qilindi |
 | Xodimlarni o‘qitish | Administrator va o‘qituvchi amaliy yo‘riqnomasi | `STAFF-GUIDE.md` | Qabul qilindi |
 | Xavfsizlik | Argon2id, HttpOnly sessiya, CSRF, RBAC, audit, CSP, upload tekshiruvi | Ruff, pytest, npm audit, pip-audit va ACL tekshiruvi | Qabul qilindi |
-| Lokal server va backup | D diskdagi PostgreSQL/backend, boshqaruv, baza va uploads uchun SHA-256 backup skriptlari | `status-lms.ps1`, `backup-lms.ps1 -IncludeUploads`, baza hamda arxiv tarkibi tekshiruvi | Qabul qilindi |
+| Lokal server va backup | D diskdagi PostgreSQL/backend, boshqaruv, baza, uploads va secretsiz application kodi uchun SHA-256 backup skriptlari | `status-lms.ps1`, `backup-lms.ps1 -IncludeUploads -IncludeApplication`, baza hamda arxiv tarkibi tekshiruvi | Qabul qilindi |
 | GitHub frontend | Faqat frontend kodi va xavfsiz hujjatlar | Lokal `HEAD` va `origin/main` tengligi | Qabul qilindi |
 | Public production | Cloudflare runtime va HTTPS/WAF/Tunnel konfiguratsiyasi tayyor | `cloudflared 2026.9.1` SHA-256 bilan tekshirildi; domen va tunnel credentiali mavjud emas | Tashqi rekvizit kutilmoqda |
 
