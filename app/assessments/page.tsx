@@ -22,7 +22,7 @@ export default function AssessmentsPage() {
         const profileResponse = await apiFetch("/api/v1/auth/me");
         if (profileResponse.status === 401) return router.replace("/login");
         const profile = (await profileResponse.json()) as AuthUser;
-        if (profile.role !== "student") return router.replace(profile.role === "admin" || profile.role === "super_admin" ? "/admin" : "/courses");
+        if (profile.role !== "student") return router.replace(profile.role === "admin" || profile.role === "super_admin" ? "/admin" : "/teacher");
         const response = await apiFetch("/api/v1/me/assessments");
         if (!response.ok) throw new Error("Testlarni yuklab bo‘lmadi");
         setAssessments((await response.json()) as StudentAssessment[]);

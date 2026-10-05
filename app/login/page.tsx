@@ -11,7 +11,7 @@ import styles from "./styles.module.css";
 function homeFor(user: AuthUser) {
   if (user.role === "super_admin" || user.role === "admin") return "/admin";
   if (user.role === "student") return "/my-courses";
-  return "/courses";
+  return "/teacher";
 }
 
 export default function LoginPage() {

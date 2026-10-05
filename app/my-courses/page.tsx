@@ -24,7 +24,7 @@ export default function MyCoursesPage() {
         if (profileResponse.status === 401) return router.replace("/login");
         if (!profileResponse.ok) throw new Error("Profilni yuklab bo‘lmadi");
         const profile = (await profileResponse.json()) as AuthUser;
-        if (profile.role !== "student") return router.replace(profile.role === "admin" || profile.role === "super_admin" ? "/admin" : "/courses");
+        if (profile.role !== "student") return router.replace(profile.role === "admin" || profile.role === "super_admin" ? "/admin" : "/teacher");
         setUser(profile);
         const response = await apiFetch("/api/v1/me/courses");
         if (!response.ok) throw new Error("Kurslaringizni yuklab bo‘lmadi");

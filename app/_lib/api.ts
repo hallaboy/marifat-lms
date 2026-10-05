@@ -201,6 +201,52 @@ export type AdminAssignmentDetail = Assignment & {
   submissions: AssignmentSubmission[];
 };
 
+export type TeacherOverview = {
+  assigned_courses: number;
+  total_students: number;
+  active_students: number;
+  average_progress: number;
+  pending_submissions: number;
+  average_assessment_score: number;
+};
+
+export type TeacherCourseSummary = {
+  course_id: string;
+  title: string;
+  category: string;
+  status: "draft" | "published" | "archived";
+  lesson_count: number;
+  student_count: number;
+  completed_students: number;
+  average_progress: number;
+  pending_submissions: number;
+  average_assessment_score: number;
+};
+
+export type TeacherDashboard = {
+  overview: TeacherOverview;
+  courses: TeacherCourseSummary[];
+};
+
+export type TeacherStudentSummary = {
+  enrollment_id: string;
+  student_id: string;
+  full_name: string;
+  email: string;
+  status: EnrollmentStatus;
+  progress_percent: number;
+  completed_lessons: number;
+  total_lessons: number;
+  average_assessment_score: number;
+  assignment_submissions: number;
+  average_assignment_score: number;
+};
+
+export type TeacherCourseDetail = {
+  course: TeacherCourseSummary;
+  students: TeacherStudentSummary[];
+};
+
 export type StudentAssignment = Assignment & {
   is_overdue: boolean;
   submission: AssignmentSubmission | null;

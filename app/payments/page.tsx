@@ -25,7 +25,7 @@ export default function StudentPaymentsPage() {
         const profileResponse = await apiFetch("/api/v1/auth/me");
         if (profileResponse.status === 401) return router.replace("/login");
         const profile = (await profileResponse.json()) as AuthUser;
-        if (profile.role !== "student") return router.replace(profile.role === "admin" || profile.role === "super_admin" ? "/admin/payments" : "/courses");
+        if (profile.role !== "student") return router.replace(profile.role === "admin" || profile.role === "super_admin" ? "/admin/payments" : "/teacher");
         setUser(profile);
         const response = await apiFetch("/api/v1/me/payments");
         if (!response.ok) throw new Error("To‘lovlaringizni yuklab bo‘lmadi");

@@ -51,6 +51,8 @@
 - Tizim miqyosidagi analitika faqat `super_admin` va `admin` rollariga beriladi.
 - Talaba analitikasi foydalanuvchining serverdagi sessiya identifikatoriga bog‘lanadi va faqat uning o‘z enrollment, test hamda vazifa yozuvlarini qamrab oladi.
 - Frontenddagi yo‘naltirish qo‘shimcha qulaylik hisoblanadi; asosiy rol va ma’lumotlarga kirish nazorati har bir API so‘rovida backendda bajariladi.
+- O‘qituvchi analitikasi faqat `teacher` roliga beriladi va barcha kurs, talaba, test hamda topshiriq so‘rovlari serverda `courses.teacher_id` bilan cheklanadi.
+- Boshqa o‘qituvchiga tegishli kurs yoki topshiriq identifikatori yuborilsa, mavjudlik haqida ma’lumot sizib chiqmasligi uchun `404` qaytariladi.
 
 ## To‘lovlar xavfsizligi
 

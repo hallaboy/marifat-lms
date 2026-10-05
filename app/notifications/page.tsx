@@ -61,7 +61,7 @@ export default function NotificationsPage() {
   }
 
   const items = useMemo(() => onlyUnread ? feed.items.filter((item) => !item.is_read) : feed.items, [feed.items, onlyUnread]);
-  const backHref = user?.role === "admin" || user?.role === "super_admin" ? "/admin" : user?.role === "student" ? "/my-courses" : "/courses";
+  const backHref = user?.role === "admin" || user?.role === "super_admin" ? "/admin" : user?.role === "student" ? "/my-courses" : "/teacher";
 
   function icon(item: Notification) {
     if (item.priority === "urgent") return SealWarning;

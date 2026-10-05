@@ -84,7 +84,7 @@ export default function HelpPage() {
 
   const filteredFaqs = useMemo(() => faqs.filter((item) => `${item.category} ${item.question} ${item.answer}`.toLocaleLowerCase("uz").includes(query.toLocaleLowerCase("uz"))), [faqs, query]);
   const selected = tickets.find((item) => item.id === selectedId) ?? null;
-  const backHref = user?.role === "admin" || user?.role === "super_admin" ? "/admin" : user?.role === "student" ? "/" : "/courses";
+  const backHref = user?.role === "admin" || user?.role === "super_admin" ? "/admin" : user?.role === "student" ? "/" : "/teacher";
 
   return <main className={styles.shell}>
     <header><Link href={backHref}><ArrowLeft /> Kabinetga qaytish</Link><span><Headset weight="fill" />Yordam markazi</span></header>

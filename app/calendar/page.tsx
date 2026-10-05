@@ -26,7 +26,7 @@ export default function StudentCalendarPage() {
         const profileResponse = await apiFetch("/api/v1/auth/me");
         if (profileResponse.status === 401) return router.replace("/login");
         const profile = (await profileResponse.json()) as AuthUser;
-        if (profile.role !== "student") return router.replace(profile.role === "admin" || profile.role === "super_admin" ? "/admin/calendar" : "/courses");
+        if (profile.role !== "student") return router.replace(profile.role === "admin" || profile.role === "super_admin" ? "/admin/calendar" : "/teacher");
         setUser(profile);
         const response = await apiFetch("/api/v1/me/calendar");
         if (!response.ok) throw new Error("Taqvimni yuklab bo‘lmadi");

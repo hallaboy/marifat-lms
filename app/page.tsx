@@ -84,6 +84,7 @@ export default function Dashboard() {
         if (!profileResponse.ok) throw new Error("Profilni yuklab bo‘lmadi");
         const profile = (await profileResponse.json()) as AuthUser;
         if (profile.role === "admin" || profile.role === "super_admin") return router.replace("/admin");
+        if (profile.role === "teacher") return router.replace("/teacher");
         if (profile.role !== "student") return router.replace("/courses");
         setUser(profile);
 
