@@ -1,6 +1,6 @@
 "use client";
 
-import { Bell, BookOpen, Books, ChartBar, ClipboardText, Exam, Lifebuoy, SignOut, Student, TrendUp, UsersThree } from "@phosphor-icons/react";
+import { Bell, BookOpen, Books, ChartBar, ClipboardText, Exam, Lifebuoy, PlugsConnected, SignOut, Student, TrendUp, UsersThree } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -50,7 +50,7 @@ export default function TeacherDashboardPage() {
     <main className={styles.shell}>
       <header className={styles.topbar}>
         <Link href="/teacher" className={styles.brand}><BookOpen weight="fill" />ma&apos;rifat</Link>
-        <nav><Link href="/notifications"><Bell /> Xabarlar</Link><Link href="/resources"><Books /> Resurslar</Link><Link href="/help"><Lifebuoy /> Yordam</Link></nav>
+        <nav><Link href="/notifications"><Bell /> Xabarlar</Link><Link href="/resources"><Books /> Resurslar</Link><Link href="/integrations"><PlugsConnected /> Telegram</Link><Link href="/help"><Lifebuoy /> Yordam</Link></nav>
         <div className={styles.profile}><span><small>O‘qituvchi</small><b>{user?.full_name}</b></span><button onClick={logout}><SignOut /> Chiqish</button></div>
       </header>
 

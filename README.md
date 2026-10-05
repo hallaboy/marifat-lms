@@ -58,6 +58,8 @@ Butun lokal platformani ishga tushirish:
 - Talabaning davomati: `http://127.0.0.1:3000/attendance`
 - Talabaning sertifikatlari: `http://127.0.0.1:3000/certificates`
 - Sertifikatni tekshirish: `/certificates/{verification_code}`
+- Shaxsiy integratsiyalar: `http://127.0.0.1:3000/integrations`
+- Integratsiyalar boshqaruvi: `http://127.0.0.1:3000/admin/integrations`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -183,6 +185,9 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Kursga bog‘langan xabarni talaba faqat shu kursga faol biriktirilgan bo‘lsa ko‘radi.
 - Har bir foydalanuvchining o‘qilganlik holati PostgreSQL bazasida alohida saqlanadi; bitta yoki barcha xabarni o‘qildi deb belgilash mumkin.
 - Xabardagi amal tugmasi faqat platforma ichidagi xavfsiz yo‘lga yo‘naltiriladi. Ushbu modul keyingi Telegram yetkazib berish kanali uchun asos bo‘ladi.
+- Telegram boti sozlanganda foydalanuvchi 15 daqiqalik bir martalik kod bilan o‘z hisobini bog‘laydi va tegishli e’lonlarni bot orqali oladi.
+- CRM sozlanganda nashr hodisasi HMAC-SHA256 imzosi, vaqt belgisi va yagona delivery identifikatori bilan HTTPS webhookka yuboriladi.
+- Tashqi xabarlar idempotent outboxda saqlanadi; worker uzilishlarda eksponensial kechikish bilan qayta urinadi, administrator esa holat jurnalini ko‘radi.
 
 ## Yordam markazi va texnik ko‘mak
 

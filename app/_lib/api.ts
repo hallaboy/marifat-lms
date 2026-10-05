@@ -294,6 +294,43 @@ export type Certificate = {
   is_valid: boolean;
 };
 
+export type TelegramIntegration = {
+  enabled: boolean;
+  linked: boolean;
+  bot_username: string | null;
+  linked_at: string | null;
+};
+
+export type TelegramLink = {
+  command: string;
+  deep_link: string | null;
+  expires_at: string;
+};
+
+export type IntegrationAdmin = {
+  telegram_enabled: boolean;
+  telegram_bot_username: string | null;
+  crm_enabled: boolean;
+  linked_telegram_accounts: number;
+  pending_deliveries: number;
+  failed_deliveries: number;
+  delivered_deliveries: number;
+  dead_deliveries: number;
+};
+
+export type IntegrationDelivery = {
+  id: string;
+  channel: "telegram" | "crm";
+  event_type: string;
+  destination: string;
+  status: "pending" | "processing" | "delivered" | "failed" | "dead";
+  attempts: number;
+  next_attempt_at: string;
+  last_error: string | null;
+  delivered_at: string | null;
+  created_at: string;
+};
+
 export type StudentAssignment = Assignment & {
   is_overdue: boolean;
   submission: AssignmentSubmission | null;

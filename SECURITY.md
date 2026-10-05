@@ -104,6 +104,15 @@
 - O‘qilganlik yozuvi foydalanuvchi identifikatoriga bog‘langan; boshqa foydalanuvchi nomidan xabar holatini o‘zgartirish mumkin emas.
 - Amal havolalari faqat `/` bilan boshlanuvchi ichki platforma yo‘llari bo‘lishi mumkin; tashqi va protokolga bog‘liq havolalar rad etiladi.
 
+## Telegram va CRM integratsiyalari xavfsizligi
+
+- Telegram bot tokeni, webhook siri va CRM HMAC siri frontendga yoki PostgreSQL bazasiga yozilmaydi; ular faqat server secret storage xizmatidan olinadi.
+- Telegram hisobini bog‘lash kodi kriptografik tasodifiy, bazada faqat SHA-256 xeshi saqlanadi, 15 daqiqada tugaydi va bir marta ishlatiladi.
+- Telegram webhook so‘rovi `X-Telegram-Bot-Api-Secret-Token` sarlavhasi bilan doimiy vaqtli taqqoslashdan o‘tadi; integratsiya o‘chirilganida endpoint `404` qaytaradi.
+- CRM hodisasi xom JSON tanasi, Unix vaqt belgisi va HMAC-SHA256 imzosi bilan yuboriladi; redirect kuzatilmaydi.
+- Yetkazmalar yagona idempotency kaliti bilan outboxga yoziladi. Xatolar javob tanasini saqlamaydi, urinishlar cheklangan va kechiktirib qaytariladi.
+- Administrator jurnalida Telegram chat identifikatorining faqat oxirgi to‘rtta belgisi ko‘rinadi; token, payload va to‘liq manzil API javobiga kiritilmaydi.
+
 ## Texnik yordam xavfsizligi
 
 - Foydalanuvchi faqat o‘z identifikatoriga tegishli murojaatlar va yozishmalarni ko‘ra oladi; begona identifikator `404` qaytaradi.

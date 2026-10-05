@@ -22,6 +22,7 @@ import {
   MagnifyingGlass,
   Medal,
   Play,
+  PlugsConnected,
   Question,
   Sparkle,
   WarningCircle,
@@ -156,6 +157,7 @@ export default function Dashboard() {
           <p className="navLabel second">BOSHQALAR</p>
           <Link className="navItem" href="/payments"><CreditCard size={21} /><span>To‘lovlar</span></Link>
           <Link className="navItem" href="/help"><Question size={21} /><span>Yordam markazi</span></Link>
+          <Link className="navItem" href="/integrations"><PlugsConnected size={21} /><span>Integratsiyalar</span></Link>
         </nav>
         <div className="upgradeCard">
           <span className="spark"><Sparkle weight="fill" /></span>
