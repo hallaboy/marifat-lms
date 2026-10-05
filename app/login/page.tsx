@@ -103,7 +103,6 @@ export default function LoginPage() {
           <button className={styles.submit} type="submit" disabled={submitting}>
             {submitting ? "Tekshirilmoqda…" : <>Kirish <SignIn weight="bold" /></>}
           </button>
-          <Link href="/" className={styles.back}>← Bosh sahifaga qaytish</Link>
         </form>
       </section>
     </main>
