@@ -73,6 +73,13 @@
 - Qoralama tadbirlar talaba API’siga kiritilmaydi.
 - Jonli dars va uchrashuv havolalari faqat HTTPS bo‘lsa saqlanadi.
 
+## Davomat xavfsizligi
+
+- Davomatni faqat administrator yoki kursga biriktirilgan o‘qituvchi CSRF himoyasi orqali belgilaydi.
+- Talaba identifikatori serverda aynan tanlangan kursning enrollment yozuvlari bilan tekshiriladi.
+- O‘qituvchi boshqa kurs identifikatorini yuborsa, kurs mavjudligi oshkor qilinmasdan `404` qaytariladi.
+- Talaba API’si sessiyadagi foydalanuvchi identifikatori bo‘yicha faqat uning o‘z davomat yozuvlarini qaytaradi.
+
 ## Resurslar kutubxonasi xavfsizligi
 
 - Resurs guruhlari va materiallarini yaratish, nashr qilish yoki o‘chirish faqat administrator va CSRF himoyasi bilan bajariladi.

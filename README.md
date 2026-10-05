@@ -45,6 +45,7 @@ Butun lokal platformani ishga tushirish:
 - Yordam markazi boshqaruvi: `http://127.0.0.1:3000/admin/support`
 - O‘qituvchi kabineti: `http://127.0.0.1:3000/teacher`
 - O‘qituvchi kontent boshqaruvi: `/teacher/courses/{course_id}/manage`
+- O‘qituvchi davomat jurnali: `/teacher/courses/{course_id}/attendance`
 - Talabaning kurslari: `http://127.0.0.1:3000/my-courses`
 - Talabaning testlari: `http://127.0.0.1:3000/assessments`
 - Talabaning uy vazifalari: `http://127.0.0.1:3000/assignments`
@@ -54,6 +55,7 @@ Butun lokal platformani ishga tushirish:
 - Elektron resurslar: `http://127.0.0.1:3000/resources`
 - Bildirishnomalar markazi: `http://127.0.0.1:3000/notifications`
 - Texnik yordam markazi: `http://127.0.0.1:3000/help`
+- Talabaning davomati: `http://127.0.0.1:3000/attendance`
 - Dastlabki Super Admin: `admin@marifat.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
@@ -146,6 +148,13 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Talaba faqat o‘zi biriktirilgan kurslarning nashr qilingan tadbirlarini ko‘radi.
 - Nashr qilingan uy vazifalarining topshirish muddatlari talaba taqvimiga avtomatik qo‘shiladi.
 - Taqvim ma’lumotlari keyingi Telegram eslatmalari integratsiyasi uchun tayyor asos hisoblanadi.
+
+## Davomat
+
+- O‘qituvchi faqat o‘ziga biriktirilgan kursni ochib, dars kesimida barcha talabalar davomatini belgilaydi.
+- `Qatnashdi`, `Qatnashmadi`, `Kechikdi` va `Sababli` holatlari hamda ixtiyoriy izoh saqlanadi.
+- Bir dars va talaba uchun bitta davomat yozuvi mavjud; qayta saqlash yangi dublikat yaratmay, mavjud yozuvni yangilaydi.
+- Talaba faqat o‘z davomat tarixini, qatnashgan/kechikkan/qatnashmagan sonini va umumiy foizini ko‘radi.
 
 ## Elektron resurslar kutubxonasi
 

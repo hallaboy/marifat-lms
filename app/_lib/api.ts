@@ -247,6 +247,39 @@ export type TeacherCourseDetail = {
   students: TeacherStudentSummary[];
 };
 
+export type AttendanceStatus = "present" | "absent" | "late" | "excused";
+
+export type AttendanceRecord = {
+  id: string;
+  lesson_id: string;
+  lesson_title: string;
+  student_id: string;
+  student_name: string;
+  status: AttendanceStatus;
+  note: string | null;
+  marked_at: string;
+};
+
+export type AttendanceBoard = {
+  course_id: string;
+  course_title: string;
+  lessons: { lesson_id: string; title: string; position: number; is_published: boolean }[];
+  students: { student_id: string; full_name: string; email: string; enrollment_status: string }[];
+  records: AttendanceRecord[];
+};
+
+export type StudentAttendance = {
+  summary: {
+    total_marked: number;
+    present: number;
+    absent: number;
+    late: number;
+    excused: number;
+    attendance_percent: number;
+  };
+  records: AttendanceRecord[];
+};
+
 export type StudentAssignment = Assignment & {
   is_overdue: boolean;
   submission: AssignmentSubmission | null;

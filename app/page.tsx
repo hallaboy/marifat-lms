@@ -9,6 +9,7 @@ import {
   BookOpen,
   Books,
   CalendarBlank,
+  CalendarCheck,
   CaretDown,
   ChartBar,
   Check,
@@ -132,6 +133,7 @@ export default function Dashboard() {
     { label: "Uy vazifalari", icon: ClipboardText, badge: pendingAssignments.length || undefined, href: "/assignments" },
     { label: "Taqvim", icon: CalendarBlank, href: "/calendar" },
     { label: "Natijalar", icon: ChartBar, href: "/results" },
+    { label: "Davomat", icon: CalendarCheck, href: "/attendance" },
     { label: "Resurslar", icon: Books, href: "/resources" },
   ];
 
