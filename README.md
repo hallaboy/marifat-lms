@@ -1,6 +1,8 @@
-# Ma’rifat LMS
+# SiteLearning LMS
 
 O‘zbek tilidagi zamonaviy LMS platformasi. Haqiqiy FastAPI autentifikatsiyasi, rolga asoslangan ruxsatlar, Super Admin paneli, foydalanuvchilar, kurslar va darslar boshqaruvi ishlaydi.
+
+Production manzil: `https://sitlearning.uz` (Cloudflare Tunnel va DNS faollashtirilgach).
 
 ## Texnologiyalar
 
@@ -60,7 +62,7 @@ Butun lokal platformani ishga tushirish:
 - Sertifikatni tekshirish: `/certificates/{verification_code}`
 - Shaxsiy integratsiyalar: `http://127.0.0.1:3000/integrations`
 - Integratsiyalar boshqaruvi: `http://127.0.0.1:3000/admin/integrations`
-- Dastlabki Super Admin: `admin@marifat.uz`
+- Dastlabki Super Admin: `admin@sitlearning.uz`
 - Bir martalik boshlang‘ich parol faqat lokal `D:\LMS-Server\secrets\initial-super-admin.env` faylida saqlanadi.
 
 GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js runtime hamda FastAPI serverini talab qiladi.
@@ -209,6 +211,7 @@ Production frontend statik GitHub Pages emas, qat’iy nonce asosidagi CSP’ni 
 
 Xavfsizlik talablari [SECURITY.md](./SECURITY.md) faylida yozilgan.
 Cloudflare Tunnel, WAF va production release tartibi [deployment/PRODUCTION.md](./deployment/PRODUCTION.md) faylida berilgan.
+`sitlearning.uz` domenini xavfsiz ko‘chirish rejasi [deployment/SITELEARNING-DOMAIN.md](./deployment/SITELEARNING-DOMAIN.md) faylida berilgan.
 Kundalik monitoring, tekshiriladigan backup va hodisaga javob tartibi [deployment/OPERATIONS.md](./deployment/OPERATIONS.md) faylida berilgan.
 Administrator va o‘qituvchilar uchun amaliy yo‘riqnoma [deployment/STAFF-GUIDE.md](./deployment/STAFF-GUIDE.md) faylida berilgan.
 Talablarning bandma-band qabul holati [deployment/ACCEPTANCE.md](./deployment/ACCEPTANCE.md) faylida qayd etilgan.

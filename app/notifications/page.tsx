@@ -70,7 +70,7 @@ export default function NotificationsPage() {
   }
 
   return <main className={styles.shell}>
-    <header><Link href="/" className={styles.brand}><BookOpen weight="fill" />ma&apos;rifat</Link><span>{user?.full_name}</span></header>
+    <header><Link href="/" className={styles.brand}><BookOpen weight="fill" />SiteLearning</Link><span>{user?.full_name}</span></header>
     <section className={styles.hero}><Link href={backHref}><ArrowLeft /> Kabinetga qaytish</Link><p>XABARLAR MARKAZI</p><h1>Bildirishnomalar</h1><span>Muhim e’lonlar, kurs yangiliklari va eslatmalar.</span><BellRinging weight="duotone" /></section>
     <section className={styles.content}>
       <div className={styles.toolbar}><div><button className={!onlyUnread ? styles.active : ""} onClick={() => setOnlyUnread(false)}>Barchasi <b>{feed.items.length}</b></button><button className={onlyUnread ? styles.active : ""} onClick={() => setOnlyUnread(true)}>O‘qilmagan <b>{feed.unread_count}</b></button></div>{feed.unread_count > 0 && <button onClick={() => void markAllRead()}><Check /> Barchasini o‘qildi deb belgilash</button>}</div>

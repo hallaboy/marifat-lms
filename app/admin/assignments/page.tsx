@@ -98,7 +98,7 @@ export default function AdminAssignmentsPage() {
 
   return (
     <main className={styles.shell}>
-      <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />ma&apos;rifat</span></header>
+      <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />SiteLearning</span></header>
       <section className={styles.content}>
         <div className={styles.titleRow}><div><p>AMALIY TOPSHIRIQLAR</p><h1>Uy vazifalari</h1><span>Topshiriq yarating, talaba fayllarini tekshiring va fikr bildiring.</span></div><button onClick={() => setShowForm((current) => !current)}><Plus /> Yangi vazifa</button></div>
         {error && <div className={styles.error}>{error}</div>}{message && <div className={styles.success}><CheckCircle />{message}</div>}

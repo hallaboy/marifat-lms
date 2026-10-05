@@ -23,17 +23,18 @@ Backend secret storage:
 
 ```dotenv
 ENVIRONMENT=production
-ALLOWED_ORIGINS=["https://lms.example.uz"]
-TRUSTED_HOSTS=["lms.example.uz","127.0.0.1"]
+ALLOWED_ORIGINS=["https://sitlearning.uz","https://www.sitlearning.uz"]
+TRUSTED_HOSTS=["sitlearning.uz","www.sitlearning.uz","127.0.0.1","localhost"]
 COOKIE_SECURE=true
 INTEGRATION_WORKER_ENABLED=true
-PUBLIC_APP_URL=https://lms.example.uz
+PUBLIC_APP_URL=https://sitlearning.uz
 ```
 
 Frontend build environment:
 
 ```dotenv
-NEXT_PUBLIC_API_ORIGIN=https://lms.example.uz
+# Bir xil origin ishlatiladi: qiymatni bermang yoki bo‘sh qoldiring.
+NEXT_PUBLIC_API_ORIGIN=
 ```
 
 Telegram, CRM, Click, Payme va Firebase service-account kalitlari Git repositoryga yozilmaydi. Firebase Web config hamda public VAPID kaliti `NEXT_PUBLIC_FIREBASE_*` o‘zgaruvchilarida, service-account JSON esa faqat backend secret storage’da turadi.
@@ -64,3 +65,4 @@ npm run build
 Release oldidan PostgreSQL custom-format backup yarating, `/api/v1/ready` va frontend `/login` uchun 200 javobni tekshiring, keyin Cloudflare orqali login, upload, webhook va logout smoke testlarini bajaring.
 
 Kundalik monitoring, backup, tiklash sinovi va hodisaga javob tartibi [OPERATIONS.md](./OPERATIONS.md) faylida berilgan.
+`sitlearning.uz` DNS ko‘chirish tartibi va saqlanishi shart bo‘lgan pochta yozuvlari [SITELEARNING-DOMAIN.md](./SITELEARNING-DOMAIN.md) faylida qayd etilgan.

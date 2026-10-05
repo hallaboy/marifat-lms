@@ -160,7 +160,7 @@ export default function AdminCoursesPage() {
 
   return (
     <main className={styles.shell}>
-      <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />ma&apos;rifat</span></header>
+      <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />SiteLearning</span></header>
       <section className={styles.content}>
         <div className={styles.titleRow}>
           <div><p>TA’LIM KONTENTI</p><h1>Kurslar boshqaruvi</h1><span>Kurs yarating, dars va quiz qo‘shing, so‘ng katalogga nashr qiling.</span></div>

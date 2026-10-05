@@ -67,7 +67,7 @@ export default function AdminCertificatesPage() {
   }
 
   return <main className={styles.shell}>
-    <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />ma&apos;rifat</span></header>
+    <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />SiteLearning</span></header>
     <section className={styles.content}>
       <div className={styles.heading}><div><p>SERTIFIKATLAR REESTRI</p><h1>Sertifikatlar</h1><span>Berilgan sertifikatlarni tekshiring va zarur bo‘lsa bekor qiling.</span></div><Medal weight="duotone" /></div>
       {error && <div className={styles.error}><WarningCircle />{error}</div>}

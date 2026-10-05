@@ -107,7 +107,7 @@ export default function AdminSupportPage() {
   const visibleTickets = filter === "all" ? tickets : tickets.filter((item) => item.status === filter);
 
   return <main className={styles.shell}>
-    <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />ma&apos;rifat</span></header>
+    <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />SiteLearning</span></header>
     <section className={styles.content}>
       <div className={styles.heading}><div><p>QO‘LLAB-QUVVATLASH</p><h1>Yordam markazi</h1><span>FAQ va foydalanuvchi murojaatlarini yagona paneldan boshqaring.</span></div><button onClick={() => setShowFaqForm((value) => !value)}><Plus /> Yangi FAQ</button></div>
       {error && <div className={styles.error}><WarningCircle />{error}</div>}

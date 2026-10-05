@@ -97,7 +97,7 @@ export default function TeacherCoursePage() {
   }
 
   return <main className={styles.shell}>
-    <header className={styles.topbar}><Link href="/teacher" className={styles.brand}><BookOpen weight="fill" />ma&apos;rifat</Link><nav><Link href="/teacher"><ArrowLeft /> Kabinetga qaytish</Link></nav><div className={styles.profile}><span><small>O‘qituvchi</small><b>{user?.full_name}</b></span><button onClick={logout}><SignOut /> Chiqish</button></div></header>
+    <header className={styles.topbar}><Link href="/teacher" className={styles.brand}><BookOpen weight="fill" />SiteLearning</Link><nav><Link href="/teacher"><ArrowLeft /> Kabinetga qaytish</Link></nav><div className={styles.profile}><span><small>O‘qituvchi</small><b>{user?.full_name}</b></span><button onClick={logout}><SignOut /> Chiqish</button></div></header>
     {loading && <section className={styles.state}>Kurs yuklanmoqda…</section>}
     {error && <section className={`${styles.state} ${styles.error}`}>{error}</section>}
     {detail && <>

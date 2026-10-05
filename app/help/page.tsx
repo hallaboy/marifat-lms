@@ -88,7 +88,7 @@ export default function HelpPage() {
 
   return <main className={styles.shell}>
     <header><Link href={backHref}><ArrowLeft /> Kabinetga qaytish</Link><span><Headset weight="fill" />Yordam markazi</span></header>
-    <section className={styles.hero}><div><p>MA’RIFAT YORDAM MARKAZI</p><h1>Sizga qanday yordam beramiz?</h1><span>Yo‘riqnomalarni qidiring yoki texnik yordamga murojaat yuboring.</span></div><label><MagnifyingGlass /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Savol yoki mavzuni qidiring..." /></label></section>
+    <section className={styles.hero}><div><p>SITELEARNING YORDAM MARKAZI</p><h1>Sizga qanday yordam beramiz?</h1><span>Yo‘riqnomalarni qidiring yoki texnik yordamga murojaat yuboring.</span></div><label><MagnifyingGlass /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Savol yoki mavzuni qidiring..." /></label></section>
     <section className={styles.content}>
       {error && <div className={styles.error}><WarningCircle />{error}</div>}
       {message && <div className={styles.success}><CheckCircle />{message}</div>}

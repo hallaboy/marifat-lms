@@ -71,7 +71,7 @@ export default function AdminEnrollmentsPage() {
 
   return (
     <main className={styles.shell}>
-      <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />ma&apos;rifat</span></header>
+      <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />SiteLearning</span></header>
       <section className={styles.content}>
         <div className={styles.heading}><p>O‘QUV JARAYONI</p><h1>Kursga biriktirish</h1><span>Talabalarni kurslarga ulang va o‘zlashtirish holatini kuzating.</span></div>
         {error && <div className={styles.error}>{error}</div>}{message && <div className={styles.success}><CheckCircle />{message}</div>}

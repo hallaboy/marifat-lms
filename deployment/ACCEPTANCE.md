@@ -1,4 +1,4 @@
-# Ma’rifat LMS qabul protokoli
+# SiteLearning LMS qabul protokoli
 
 Tekshiruv sanasi: 2026-10-05. Ushbu protokol credential talab qilmaydigan lokal platforma holatini qayd etadi.
 
@@ -23,7 +23,7 @@ Tekshiruv sanasi: 2026-10-05. Ushbu protokol credential talab qilmaydigan lokal 
 | Xavfsizlik | Argon2id, HttpOnly sessiya, CSRF, RBAC, audit, CSP, upload tekshiruvi | Ruff, pytest, npm audit, pip-audit va ACL tekshiruvi | Qabul qilindi |
 | Lokal server va backup | D diskdagi PostgreSQL/backend, boshqaruv, baza, uploads va secretsiz application kodi uchun SHA-256 backup skriptlari | `status-lms.ps1`, `backup-lms.ps1 -IncludeUploads -IncludeApplication`, baza hamda arxiv tarkibi tekshiruvi | Qabul qilindi |
 | GitHub frontend | Faqat frontend kodi va xavfsiz hujjatlar | Lokal `HEAD` va `origin/main` tengligi | Qabul qilindi |
-| Public production | Cloudflare runtime va HTTPS/WAF/Tunnel konfiguratsiyasi tayyor | `cloudflared 2026.9.1` SHA-256 bilan tekshirildi; domen va tunnel credentiali mavjud emas | Tashqi rekvizit kutilmoqda |
+| Public production | `sitlearning.uz` uchun Cloudflare runtime, ikki hostname ingressi va xavfsiz DNS ko‘chirish rejasi tayyor | `cloudflared 2026.9.1`, validatsiyalangan ingress; Cloudflare/Eskiz login va tunnel credentiali kutilmoqda | Hisoblarga kirish kutilmoqda |
 
 ## Avtomatik tekshiruv natijalari
 

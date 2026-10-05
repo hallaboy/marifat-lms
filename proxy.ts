@@ -3,7 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 export function proxy(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
   const isDevelopment = process.env.NODE_ENV === "development";
-  const apiOrigin = process.env.NEXT_PUBLIC_API_ORIGIN ?? "http://127.0.0.1:8000";
+  const apiOrigin = process.env.NEXT_PUBLIC_API_ORIGIN ??
+    (isDevelopment ? "http://127.0.0.1:8000" : "");
 
   const policy = `
     default-src 'self';
@@ -11,7 +12,7 @@ export function proxy(request: NextRequest) {
     style-src 'self' 'nonce-${nonce}'${isDevelopment ? " 'unsafe-inline'" : ""};
     img-src 'self' blob: data:;
     font-src 'self';
-    connect-src 'self' ${apiOrigin} https://firebaseinstallations.googleapis.com https://fcmregistrations.googleapis.com https://fcm.googleapis.com;
+    connect-src 'self'${apiOrigin ? ` ${apiOrigin}` : ""} https://firebaseinstallations.googleapis.com https://fcmregistrations.googleapis.com https://fcm.googleapis.com;
     worker-src 'self';
     media-src 'self' blob: ${apiOrigin} https:;
     frame-src 'self' https://www.youtube-nocookie.com;

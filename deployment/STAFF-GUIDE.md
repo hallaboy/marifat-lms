@@ -1,4 +1,4 @@
-# Ma’rifat LMS xodimlar qo‘llanmasi
+# SiteLearning LMS xodimlar qo‘llanmasi
 
 Ushbu qo‘llanma administrator va o‘qituvchilarga platformadagi kundalik ishlarni xavfsiz bajarish uchun mo‘ljallangan.
 

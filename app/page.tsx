@@ -145,7 +145,7 @@ export default function Dashboard() {
   return (
     <main className="appShell">
       <aside className={`sidebar ${menuOpen ? "sidebarOpen" : ""}`}>
-        <div className="brand"><span className="brandMark"><BookOpen weight="fill" /></span><span>ma&apos;rifat</span></div>
+        <div className="brand"><span className="brandMark"><BookOpen weight="fill" /></span><span>SiteLearning</span></div>
         <button className="closeMenu" onClick={() => setMenuOpen(false)} aria-label="Menyuni yopish"><X /></button>
         <nav className="mainNav" aria-label="Asosiy menyu">
           <p className="navLabel">MENYU</p>

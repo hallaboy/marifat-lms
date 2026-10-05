@@ -58,13 +58,13 @@ export default function LoginPage() {
   return (
     <main className={styles.shell}>
       <section className={styles.brandPanel}>
-        <Link href="/" className={styles.brand}><span><BookOpen weight="fill" /></span>ma&apos;rifat</Link>
+        <Link href="/" className={styles.brand}><span><BookOpen weight="fill" /></span>SiteLearning</Link>
         <div>
           <p className={styles.eyebrow}>XAVFSIZ BOSHQARUV</p>
           <h1>Ta&apos;lim jarayonini bir joydan boshqaring.</h1>
           <p>Kurslar, o‘qituvchilar, talabalar va natijalar uchun yagona LMS muhiti.</p>
         </div>
-        <small>Ma&apos;rifat LMS • Himoyalangan sessiya</small>
+        <small>SiteLearning LMS • Himoyalangan sessiya</small>
       </section>
 
       <section className={styles.formPanel}>
@@ -80,7 +80,7 @@ export default function LoginPage() {
               autoComplete="username"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              placeholder="admin@marifat.uz"
+              placeholder="admin@sitlearning.uz"
               required
             />
           </label>

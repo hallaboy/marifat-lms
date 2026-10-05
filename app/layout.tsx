@@ -3,8 +3,10 @@ import { connection } from "next/server";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ma'rifat — Zamonaviy ta'lim platformasi",
-  description: "Kurslar, darslar va natijalarni bir joyda boshqaring.",
+  metadataBase: new URL("https://sitlearning.uz"),
+  title: "SiteLearning — Zamonaviy ta'lim platformasi",
+  description: "SiteLearning.uz — kurslar, darslar va natijalarni bir joyda boshqarish platformasi.",
+  applicationName: "SiteLearning",
 };
 
 export default async function RootLayout({

@@ -7,9 +7,14 @@ originRequest:
   noTLSVerify: false
 
 ingress:
-  - hostname: lms.example.uz
+  - hostname: sitlearning.uz
     path: ^/api/.*
     service: http://127.0.0.1:8000
-  - hostname: lms.example.uz
+  - hostname: sitlearning.uz
+    service: http://127.0.0.1:3000
+  - hostname: www.sitlearning.uz
+    path: ^/api/.*
+    service: http://127.0.0.1:8000
+  - hostname: www.sitlearning.uz
     service: http://127.0.0.1:3000
   - service: http_status:404

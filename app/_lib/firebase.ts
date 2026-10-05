@@ -1,7 +1,7 @@
 import { getApp, getApps, initializeApp } from "@firebase/app";
 import { getMessaging, isSupported, onRegistered, register, unregister } from "@firebase/messaging";
 
-const installationStorageKey = "marifat_firebase_installation_id";
+const installationStorageKey = "sitlearning_firebase_installation_id";
 
 const config = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,

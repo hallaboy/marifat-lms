@@ -88,7 +88,7 @@ export default function AdminNotificationsPage() {
   }
 
   return <main className={styles.shell}>
-    <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />ma&apos;rifat</span></header>
+    <header><Link href="/admin"><ArrowLeft /> Admin panel</Link><span><BookOpen weight="fill" />SiteLearning</span></header>
     <section className={styles.content}>
       <div className={styles.heading}><div><p>XABARLAR MARKAZI</p><h1>Bildirishnomalar</h1><span>Auditoriya yoki kurs bo‘yicha xavfsiz e’lonlar yuboring.</span></div><button onClick={() => setShowForm((value) => !value)}><Plus /> Yangi bildirishnoma</button></div>
       {error && <div className={styles.error}><WarningCircle />{error}</div>}

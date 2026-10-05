@@ -32,7 +32,7 @@ export default function CoursesPage() {
 
   return (
     <main className={styles.shell}>
-      <header><Link href="/" className={styles.brand}><BookOpen weight="fill" />ma&apos;rifat</Link><Link href="/login" className={styles.login}>Boshqaruvga kirish</Link></header>
+      <header><Link href="/" className={styles.brand}><BookOpen weight="fill" />SiteLearning</Link><Link href="/login" className={styles.login}>Boshqaruvga kirish</Link></header>
       <section className={styles.hero}>
         <Link href="/" className={styles.back}><ArrowLeft /> Bosh sahifa</Link>
         <p>KURSLAR KATALOGI</p><h1>Yangi bilim sari yo‘l</h1><span>PostgreSQL bazasidagi nashr qilingan kurslarni ko‘ring va darslarni boshlang.</span>
