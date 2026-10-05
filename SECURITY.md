@@ -55,6 +55,8 @@
 - Boshqa o‘qituvchiga tegishli kurs yoki topshiriq identifikatori yuborilsa, mavjudlik haqida ma’lumot sizib chiqmasligi uchun `404` qaytariladi.
 - O‘qituvchining dars, test, savol va vazifa yaratish yoki nashr qilish amallari CSRF, sessiya roli va kurs egasi bo‘yicha qayta tekshiriladi hamda audit jurnaliga yoziladi.
 - O‘qituvchi kursni boshqa foydalanuvchiga biriktira olmaydi va boshqa o‘qituvchi yaratgan kontentni identifikator orqali boshqara olmaydi.
+- O‘qituvchi material yuklamalari administrator yuklamalari bilan bir xil hajm, fayl imzosi va Office konteyner tekshiruvlaridan o‘tadi; foydalanuvchi yuborgan MIME qiymati yoki fayl nomiga ishonilmaydi.
+- Tashqi havolalar faqat HTTPS bo‘lishi mumkin; lokal host, xususiy IP va noto‘g‘ri YouTube identifikatorlari serverda rad etiladi.
 
 ## To‘lovlar xavfsizligi
 

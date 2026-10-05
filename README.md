@@ -81,6 +81,8 @@ GitHub Pages manzili production LMS emas. Dinamik login va admin paneli Next.js 
 - Kurs sahifasida har bir talabaning dars progressi, test o‘rtachasi va uy vazifalari holati kuzatiladi.
 - O‘qituvchi yuborilgan hujjatni ruxsat bilan yuklab olib, maksimal ball chegarasida baho va izoh qoldiradi.
 - O‘qituvchi o‘z kursiga matnli, video yoki jonli dars qo‘shadi; test yaratib savol va variantlarni kiritadi; uy vazifasi, muddat va maksimal ballni belgilaydi.
+- Har bir darsga YouTube, tashqi video/audio, gamifikatsiya havolasi yoki PDF, DOCX, PPTX, XLSX, MP3, M4A, WAV, MP4 va WebM fayli qo‘shishi mumkin.
+- O‘qituvchi faqat o‘z kursidagi materiallarni ko‘radi va o‘chiradi; yuklangan fayllar autentifikatsiyalangan API orqali uzatiladi.
 - Test va vazifalar qoralama sifatida yaratiladi va alohida nashr qilingandagina talabaga ko‘rinadi.
 - Ma’lumotlarni kurs egasi bo‘yicha filtrlash frontendga emas, FastAPI’dagi rol va `teacher_id` tekshiruviga tayanadi.
 
