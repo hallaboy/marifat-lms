@@ -2,11 +2,20 @@
 
 ## 1. DNS va Cloudflare Tunnel
 
+Portable `cloudflared 2026.9.1` binarysi `D:\LMS-Server\cloudflared\cloudflared.exe` manziliga rasmiy SHA-256 tekshiruvi bilan o‘rnatilgan. Windows versiyasi avtomatik yangilanmaydi; yangi reliz o‘rnatilganda rasmiy checksumni qayta tekshiring.
+
 1. Cloudflare Zero Trust’da nomlangan tunnel yarating.
 2. Tunnel credential JSON faylini faqat `D:\LMS-Server\secrets` ichida saqlang.
 3. `cloudflare-tunnel.example.yml` nusxasida tunnel UUID, credential yo‘li va haqiqiy domenni kiriting.
 4. Ingress tartibini saqlang: avval `^/api/.*` FastAPI’ga, keyin qolgan trafik Next.js’ga, oxirida majburiy `http_status:404`.
 5. PostgreSQL `5432` portini tunnel, router yoki firewall orqali internetga ochmang.
+
+Haqiqiy konfiguratsiya tayyor bo‘lgach versiya va ingressni tekshiring:
+
+```powershell
+& "D:\LMS-Server\cloudflared\cloudflared.exe" --version
+& "D:\LMS-Server\cloudflared\cloudflared.exe" tunnel --config "D:\LMS-Server\secrets\cloudflare-tunnel.yml" ingress validate
+```
 
 ## 2. Production environment
 
